@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <pattern id="hazard" width="24" height="24" patternTransform="rotate(-45)" patternUnits="userSpaceOnUse">
+      <rect width="12" height="24" fill="#E8B325"/>
+      <rect x="12" width="12" height="24" fill="#0B0C0F"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#0B0C0F"/>
+  <rect x="36" y="36" width="1128" height="558" fill="#14161B" stroke="#2D313C" stroke-width="2"/>
+  <rect x="36" y="36" width="1128" height="8" fill="url(#hazard)"/>
+  <path d="M720 594 Q950 510 1164 580" stroke="#3B82F6" stroke-opacity="0.45" stroke-width="4" fill="none"/>
+  <polygon points="940,145 1078,225 1094,370 990,468 836,442 786,324 838,196" fill="#1C1F26" stroke="#E8B325" stroke-width="4"/>
+  <polygon points="940,145 968,295 1078,225" fill="#2A2F3A"/>
+  <polygon points="838,196 968,295 836,442 786,324" fill="#111318"/>
+  <path d="M895 255L945 295L912 375" stroke="#E8B325" stroke-width="5"/>
+  <rect x="975" y="295" width="14" height="14" fill="#D94832"/>
+  <rect x="860" y="102" width="110" height="22" fill="#2A2F3A" stroke="#E8B325" stroke-width="2"/>
+  <line x1="915" y1="124" x2="932" y2="220" stroke="#E8B325" stroke-width="3" stroke-dasharray="10 6"/>
+  <text x="92" y="145" fill="#9C988E" font-family="monospace" font-size="22" font-weight="700">CONTRACT TENDER #5527800</text>
+  <text x="92" y="242" fill="#EBE6DA" font-family="system-ui, sans-serif" font-size="72" font-weight="800">No Asteroids Hub</text>
+  <text x="92" y="308" fill="#E8B325" font-family="monospace" font-size="28" font-weight="700">5,000,000 m³   |   90 Days   |   1-8 Co-op</text>
+  <text x="92" y="378" fill="#9C988E" font-family="system-ui, sans-serif" font-size="28">Unofficial player guide, tools and ship weapons,</text>
+  <text x="92" y="418" fill="#9C988E" font-family="system-ui, sans-serif" font-size="28">ore layers, 65 achievements, and pace calculator</text>
+  <rect x="92" y="480" width="280" height="54" fill="#E8B325"/>
+  <text x="122" y="515" fill="#0B0C0F" font-family="system-ui, sans-serif" font-size="23" font-weight="800">noasteroidshub.com</text>
+</svg>

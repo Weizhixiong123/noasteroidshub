@@ -1,0 +1,260 @@
+{
+  "totalOnSteam": 65,
+  "verifiedCount": 31,
+  "achievements": [
+    {
+      "id": "the-first-percent",
+      "name": "The first percent",
+      "category": "Destruction",
+      "description": "Destroy 1% of the asteroid.",
+      "tip": "Clears naturally in the first few days once you start mining core veins and mount your first ship turret."
+    },
+    {
+      "id": "tithe",
+      "name": "Tithe",
+      "category": "Destruction",
+      "description": "Destroy 10% of the asteroid.",
+      "tip": "500,000 m³ excavated. Use your HUD scanner to chain high-value veins and fund automated ship guns."
+    },
+    {
+      "id": "halfway-there",
+      "name": "Halfway there",
+      "category": "Destruction",
+      "description": "Destroy half of the asteroid.",
+      "tip": "2,500,000 m³ cleared. If you pass 50% around or before Day 45, automated ship scaling will carry your late game."
+    },
+    {
+      "id": "home-stretch",
+      "name": "Home stretch",
+      "category": "Destruction",
+      "description": "Destroy 90% of the asteroid.",
+      "tip": "4,500,000 m³ cleared (500,000 m³ remaining). Heavy ship ordnance like Orbital Strike and Collapsar make quick work of the last 10%."
+    },
+    {
+      "id": "earth-saved",
+      "name": "Earth saved",
+      "category": "Destruction",
+      "description": "Grind the asteroid down to zero.",
+      "tip": "Reduce remaining volume to 0 m³ before Earth impact to secure the full victory ending."
+    },
+    {
+      "id": "straight-to-the-heart",
+      "name": "Straight to the heart",
+      "category": "Destruction",
+      "description": "Reach the center of the asteroid.",
+      "tip": "Bore directly inward using Drill, Laser, or Missile Swarm in Tunnel Mode while budgeting extra return oxygen."
+    },
+    {
+      "id": "wide-awake",
+      "name": "Wide awake",
+      "category": "Destruction",
+      "description": "Reach the end without ever blacking out.",
+      "tip": "Always leave an oxygen safety margin for your return trip and board the lander before liftoff in co-op."
+    },
+    {
+      "id": "complaints-accepted",
+      "name": "Complaints accepted",
+      "category": "Destruction",
+      "description": "Let something reach Earth.",
+      "tip": "Failure / partial-impact ending triggered when the 90-day timer expires with asteroid mass still remaining."
+    },
+    {
+      "id": "something-shiny",
+      "name": "Something shiny",
+      "category": "Museum",
+      "description": "Make your first find.",
+      "tip": "Keep an eye out for non-ore relics embedded in rock pockets while tunneling."
+    },
+    {
+      "id": "collector",
+      "name": "Collector",
+      "category": "Museum",
+      "description": "Make 10 finds.",
+      "tip": "Deposit recovered relics at your ship's museum/observation dome to track progress."
+    },
+    {
+      "id": "full-museum",
+      "name": "Full museum",
+      "category": "Museum",
+      "description": "Make every find.",
+      "tip": "Requires completing all 7 museum collections across surface, deep crust, core, and drifting space debris."
+    },
+    {
+      "id": "finders-keepers",
+      "name": "Finders keepers",
+      "category": "Museum",
+      "description": "Complete the \"Lost in orbit\" collection.",
+      "tip": "Watch for orbital debris and drifting finds around the asteroid exterior (pair with Tractor Beam)."
+    },
+    {
+      "id": "historian",
+      "name": "Historian",
+      "category": "Museum",
+      "description": "Complete the \"Space history\" collection.",
+      "tip": "Includes satirical space-age relics such as orbital tapes and historical space items."
+    },
+    {
+      "id": "online",
+      "name": "Online",
+      "category": "Museum",
+      "description": "Complete the \"Internet\" collection.",
+      "tip": "Relics tied to internet-era satire hidden inside asteroid strata."
+    },
+    {
+      "id": "someone-will-claim-it",
+      "name": "Someone will claim it",
+      "category": "Museum",
+      "description": "Complete the \"Lost and found\" collection.",
+      "tip": "Includes everyday satirical objects like office chairs and the empty safe labeled for defense budgets."
+    },
+    {
+      "id": "true-fan",
+      "name": "True fan",
+      "category": "Museum",
+      "description": "Complete the \"Sci-fi and games\" collection.",
+      "tip": "Pop-culture Easter egg artifacts scattered across medium and deep excavation layers."
+    },
+    {
+      "id": "gifts-of-the-deep",
+      "name": "Gifts of the deep",
+      "category": "Museum",
+      "description": "Complete the \"From the depths\" collection.",
+      "tip": "Deep-interior relics found while pushing toward the asteroid core."
+    },
+    {
+      "id": "paleontologist",
+      "name": "Paleontologist",
+      "category": "Museum",
+      "description": "Complete the \"Dinosaurs tried too\" collection.",
+      "tip": "Collect all fossil exhibits buried inside the asteroid rock."
+    },
+    {
+      "id": "reel-it-in",
+      "name": "Reel it in",
+      "category": "Museum",
+      "description": "Catch a drifting find.",
+      "tip": "Grab a floating artifact drifting off into space after blasting open outer pockets."
+    },
+    {
+      "id": "first-paycheck",
+      "name": "First paycheck",
+      "category": "Economy & Gear",
+      "description": "Sell some ore.",
+      "tip": "Return to the lander with mined Space Ice or Meteoric Iron and sell it at the ship terminal."
+    },
+    {
+      "id": "quota-met",
+      "name": "Quota met",
+      "category": "Economy & Gear",
+      "description": "Complete an order of the day.",
+      "tip": "Check the terminal's daily order request and prioritize those specific ores for bonus income."
+    },
+    {
+      "id": "mineralogist",
+      "name": "Mineralogist",
+      "category": "Economy & Gear",
+      "description": "Find all eight minerals.",
+      "tip": "Mine all 8 core minerals (Space Ice, Meteoric Iron, Nickel, Titanium, Star Gold, Space Crystal, Plasmite, Neutronium)."
+    },
+    {
+      "id": "rocketeer",
+      "name": "Rocketeer",
+      "category": "Economy & Gear",
+      "description": "Buy the jetpack.",
+      "tip": "Essential mobility upgrade for navigating vertical shafts and flying back to the lander quickly."
+    },
+    {
+      "id": "full-toolbox",
+      "name": "Full toolbox",
+      "category": "Economy & Gear",
+      "description": "Buy every tool.",
+      "tip": "Unlock all 6 handheld tools: Pickaxe, Sledgehammer, Drill, Laser, Plasma Cutter, and Missile Swarm."
+    },
+    {
+      "id": "gun-on-the-roof",
+      "name": "Gun on the roof",
+      "category": "Economy & Gear",
+      "description": "Mount your first gun on the ship.",
+      "tip": "Buy your first automated ship weapon early so your ship chips away at the asteroid while you tunnel."
+    },
+    {
+      "id": "armed-to-the-teeth",
+      "name": "Armed to the teeth",
+      "category": "Economy & Gear",
+      "description": "Unlock every ship slot.",
+      "tip": "Unlock all 9 ship weapon slots on the mothership hull to maximize passive excavation."
+    },
+    {
+      "id": "nap-time",
+      "name": "Nap time",
+      "category": "Hazards & Misc",
+      "description": "Black out on the asteroid.",
+      "tip": "Run out of oxygen or fail to reach the lander before departure. Do this on a separate save if chasing 'Wide awake'."
+    },
+    {
+      "id": "coffee-break",
+      "name": "Coffee break",
+      "category": "Hazards & Misc",
+      "description": "Have a coffee before a shift.",
+      "tip": "Explore the mothership interior before dropping down to the lander and interact with the coffee station."
+    },
+    {
+      "id": "government-property",
+      "name": "Government property",
+      "category": "Hazards & Misc",
+      "description": "Hit a landing pad.",
+      "tip": "Strike the landing pad structure on the asteroid surface with your tool or ship fire."
+    },
+    {
+      "id": "boom",
+      "name": "Boom",
+      "category": "Hazards & Misc",
+      "description": "Smash some antimatter.",
+      "tip": "Deep-core Antimatter pockets detonate on impact—approach carefully or trigger intentionally when clear."
+    },
+    {
+      "id": "gas",
+      "name": "Gas!",
+      "category": "Hazards & Misc",
+      "description": "Breach a gas pocket.",
+      "tip": "Watch for pressurized gas pockets inside deep tunnels; breaching one unlocks this achievement."
+    }
+  ],
+  "museumCollections": [
+    {
+      "name": "Lost in orbit",
+      "achievement": "Finders keepers",
+      "focus": "Orbital debris & drifting surface finds"
+    },
+    {
+      "name": "Space history",
+      "achievement": "Historian",
+      "focus": "Satirical space-age relics (e.g., orbital tapes)"
+    },
+    {
+      "name": "Internet",
+      "achievement": "Online",
+      "focus": "Internet-era memes and digital relics"
+    },
+    {
+      "name": "Lost and found",
+      "achievement": "Someone will claim it",
+      "focus": "Misplaced everyday items (office chairs, empty defense-budget safe)"
+    },
+    {
+      "name": "Sci-fi and games",
+      "achievement": "True fan",
+      "focus": "Pop-culture and sci-fi Easter eggs"
+    },
+    {
+      "name": "From the depths",
+      "achievement": "Gifts of the deep",
+      "focus": "Deep-interior mysteries near the asteroid core"
+    },
+    {
+      "name": "Dinosaurs tried too",
+      "achievement": "Paleontologist",
+      "focus": "Prehistoric fossils embedded in the rock"
+    }
+  ]
+}

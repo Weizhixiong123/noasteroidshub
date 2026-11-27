@@ -1,0 +1,300 @@
+{
+  "meta": {
+    "title": "No Asteroids",
+    "developer": "Unruled Games",
+    "publisher": "Unruled Games",
+    "steamAppId": "5527800",
+    "releaseDate": "November 24, 2026",
+    "demoReleaseDate": "November 10, 2026",
+    "demoScope": "First 15 days of the contract (save carries over on the same PC)",
+    "price": "$7.99",
+    "launchDiscountPrice": "$6.39",
+    "launchDiscountNote": "20% launch discount until December 8, 2026",
+    "peakPlayers": "11,417",
+    "peakPlayersSource": "SteamDB (launch peak)",
+    "reviewsSummary": "Very Positive (~90% across 188+ Steam reviews)",
+    "platforms": "Windows 10+ (64-bit) & macOS (Apple Silicon only)",
+    "coopSupport": "Solo or 1–8 players online co-op",
+    "objective": "Excavate 5,000,000 m³ asteroid in 90 days (or play No Rush mode)",
+    "asteroidVolumeM3": 5000000,
+    "campaignDays": 90,
+    "saveSlots": 5,
+    "totalAchievements": 65
+  },
+  "handheldTools": [
+    {
+      "tier": 1,
+      "name": "Pickaxe",
+      "category": "Handheld Tool",
+      "role": "Starter Tool",
+      "unlockCost": "Starter",
+      "dpsOrPower": "TBD (Verifying)",
+      "notes": "Your initial mining tool on Day 1. Best used only to reach early surface veins and fund your first upgrades and ship weapon slot."
+    },
+    {
+      "tier": 2,
+      "name": "Sledgehammer",
+      "category": "Handheld Tool",
+      "role": "Early Heavy Impact",
+      "unlockCost": "TBD (Verifying)",
+      "dpsOrPower": "TBD (Verifying)",
+      "notes": "First major upgrade after the Pickaxe, breaking dense surface rock chunks faster per swing."
+    },
+    {
+      "tier": 3,
+      "name": "Drill",
+      "category": "Handheld Tool",
+      "role": "Sustained Tunneling",
+      "unlockCost": "TBD (Verifying)",
+      "dpsOrPower": "TBD (Verifying)",
+      "notes": "Ideal for boring straight corridors toward deep mineral veins detected on your HUD mineral scanner."
+    },
+    {
+      "tier": 4,
+      "name": "Laser",
+      "category": "Handheld Tool",
+      "role": "Precision & Ranged Extraction",
+      "unlockCost": "TBD (Verifying)",
+      "dpsOrPower": "TBD (Verifying)",
+      "notes": "Allows safer extraction from a distance—helpful when carving around unstable pockets or overhead veins."
+    },
+    {
+      "tier": 5,
+      "name": "Plasma Cutter",
+      "category": "Handheld Tool",
+      "role": "High-Output Modular Cutter",
+      "unlockCost": "TBD (Verifying)",
+      "dpsOrPower": "TBD (Verifying)",
+      "branches": ["Hit", "Tempo", "Sweep", "Luck"],
+      "notes": "Features four confirmed upgrade branches: Hit (damage per cut), Tempo (fire/swing speed), Sweep (area coverage), and Luck (bonus yield/finds)."
+    },
+    {
+      "tier": 6,
+      "name": "Missile Swarm",
+      "category": "Handheld Tool",
+      "role": "Endgame Handheld Ordinance",
+      "unlockCost": "TBD (Verifying)",
+      "dpsOrPower": "TBD (Verifying)",
+      "modes": ["Spread Fire", "Tunnel Mode"],
+      "notes": "Top-tier handheld gear with tactical toggle modes: Spread Fire for wide surface clearing and Tunnel Mode for punching deep shafts."
+    }
+  ],
+  "shipWeapons": [
+    {
+      "name": "Basic Turrets / Autocannons",
+      "category": "Ship Weapon",
+      "stage": "Early Game",
+      "cost": "TBD (Verifying)",
+      "role": "Continuous Exterior Chipping",
+      "notes": "Your mothership begins completely unarmed. Mounting your first roof gun unlocks 'Gun on the roof' and passively removes m³ while you mine inside."
+    },
+    {
+      "name": "Rockets",
+      "category": "Ship Weapon",
+      "stage": "Early–Mid Game",
+      "cost": "TBD (Verifying)",
+      "role": "Burst Area Excavation",
+      "notes": "Fires explosive salvos into the asteroid hull to clear outer layers faster than kinetic turrets."
+    },
+    {
+      "name": "Railgun",
+      "category": "Ship Weapon",
+      "stage": "Mid Game",
+      "cost": "TBD (Verifying)",
+      "role": "High-Velocity Piercing",
+      "notes": "High-impact kinetic cannon suited for cracking denser mid-crust rock formations."
+    },
+    {
+      "name": "Mass Driver",
+      "category": "Ship Weapon",
+      "stage": "Mid–Late Game",
+      "cost": "TBD (Verifying)",
+      "role": "Heavy Volume Demolition",
+      "notes": "Sustained heavy bombardment designed to keep pace with escalating daily quota demands."
+    },
+    {
+      "name": "Orbital Strike",
+      "category": "Ship Weapon",
+      "stage": "Late Game",
+      "cost": "TBD (Verifying)",
+      "role": "Massive Area Bombardment",
+      "notes": "High-tier orbital demolition system capable of stripping huge sections of asteroid volume per cycle."
+    },
+    {
+      "name": "Collapsar (Black Hole Weapon)",
+      "category": "Ship Weapon",
+      "stage": "Endgame",
+      "cost": "TBD (Verifying)",
+      "role": "Singularity Debris & Mass Clear",
+      "notes": "Fires a localized black hole that pulls massive chunks of rock and thousands of loose fragments inward, dramatically accelerating late-game clears."
+    },
+    {
+      "name": "Remaining 3 Ship Weapon Slots (9 Total)",
+      "category": "Ship Weapon",
+      "stage": "Community Verifying",
+      "cost": "TBD (Verifying)",
+      "role": "Full Hull Arsenal ('Armed to the teeth')",
+      "notes": "The mothership supports 9 total automated weapon systems/slots. Exact names and credit costs for the remaining 3 slots are being verified from full-release runs."
+    }
+  ],
+  "utilitiesAndDrones": [
+    {
+      "name": "HUD Mineral Scanner",
+      "category": "Utility & Drone",
+      "unlock": "Built-in HUD Upgradeable",
+      "notes": "Color-codes and filters mineral veins through rock. Always scan before swinging so you never burn oxygen on barren tunnels."
+    },
+    {
+      "name": "Oxygen & Cargo Capacity Upgrades",
+      "category": "Utility & Drone",
+      "unlock": "Suit Upgrade Terminal",
+      "notes": "Prioritize these alongside early tools. Oxygen is your round-trip ticket; cargo capacity reduces wasted flights back to the lander."
+    },
+    {
+      "name": "Jetpack",
+      "category": "Utility & Drone",
+      "unlock": "Suit / Gear Shop ('Rocketeer')",
+      "notes": "Dramatically improves vertical mobility inside deep craters and speeds up emergency returns before lander liftoff."
+    },
+    {
+      "name": "Tractor Beam",
+      "category": "Utility & Drone",
+      "unlock": "Ship / Suit Utility",
+      "notes": "Pulls floating ore fragments and drifting debris toward you or the collection zone without manual chasing."
+    },
+    {
+      "name": "Digger / Prospector / Sapper Systems",
+      "category": "Utility & Drone",
+      "unlock": "Automated Drones & Roles",
+      "notes": "Specialized automation/role systems: Digger (autonomous rock breaking), Prospector (resource gathering/vein assist), and Sapper (explosive charges)."
+    }
+  ],
+  "ores": [
+    {
+      "name": "Space Ice",
+      "layer": "Surface / Crust",
+      "tier": "Early",
+      "baseValue": "TBD (Verifying)",
+      "mineralogistCore": true,
+      "hazard": "None",
+      "notes": "Abundant near the outer shell. Reliable starter cash before deeper veins open up."
+    },
+    {
+      "name": "Meteoric Iron",
+      "layer": "Surface – Mid Crust",
+      "tier": "Early",
+      "baseValue": "TBD (Verifying)",
+      "mineralogistCore": true,
+      "hazard": "None",
+      "notes": "Primary early-game bread-and-butter ore. Watch terminal prices if you dump huge loads consecutively."
+    },
+    {
+      "name": "Nickel",
+      "layer": "Mid Crust",
+      "tier": "Early–Mid",
+      "baseValue": "TBD (Verifying)",
+      "mineralogistCore": true,
+      "hazard": "None",
+      "notes": "Commonly found alongside Meteoric Iron as you push past the outer crust."
+    },
+    {
+      "name": "Titanium",
+      "layer": "Mid – Deep Crust",
+      "tier": "Mid",
+      "baseValue": "TBD (Verifying)",
+      "mineralogistCore": true,
+      "hazard": "None",
+      "notes": "Higher-density structural ore that fuels mid-game drill, laser, and ship slot purchases."
+    },
+    {
+      "name": "Star Gold",
+      "layer": "Mid – Deep Veins",
+      "tier": "Mid–High",
+      "baseValue": "TBD (Verifying)",
+      "mineralogistCore": true,
+      "hazard": "None",
+      "notes": "High-value vein target worth filtering on your HUD mineral scanner."
+    },
+    {
+      "name": "Space Crystal",
+      "layer": "Mid – Deep Mantle",
+      "tier": "Mid–High",
+      "baseValue": "TBD (Verifying)",
+      "mineralogistCore": true,
+      "hazard": "None",
+      "notes": "Distinctive crystalline pockets offering strong value-per-cargo-slot returns."
+    },
+    {
+      "name": "Plasmite",
+      "layer": "Deep Mantle",
+      "tier": "High",
+      "baseValue": "TBD (Verifying)",
+      "mineralogistCore": true,
+      "hazard": "Moderate",
+      "notes": "Deep-layer high-payout resource needed to finance Plasma Cutter branches and heavy ship turrets."
+    },
+    {
+      "name": "Neutronium",
+      "layer": "Deep Core",
+      "tier": "Late",
+      "baseValue": "TBD (Verifying)",
+      "mineralogistCore": true,
+      "hazard": "Dense Rock",
+      "notes": "Ultra-dense deep core mineral requiring upgraded laser/plasma or explosive tools."
+    },
+    {
+      "name": "Dark Matter",
+      "layer": "Asteroid Core",
+      "tier": "Exotic",
+      "baseValue": "TBD (Verifying)",
+      "mineralogistCore": false,
+      "hazard": "Deep Depth",
+      "notes": "Exotic late-game material found near the asteroid's center, helping bankroll endgame ship weapons."
+    },
+    {
+      "name": "Antimatter",
+      "layer": "Asteroid Core",
+      "tier": "Exotic / Volatile",
+      "baseValue": "TBD (Verifying)",
+      "mineralogistCore": false,
+      "hazard": "Explosive ('Boom' achievement)",
+      "notes": "Volatile core substance. Smashing Antimatter triggers a detonation (unlocks the 'Boom' Steam achievement)."
+    }
+  ],
+  "systemRequirements": {
+    "windows": {
+      "minimum": {
+        "os": "Windows 10 (64-bit)",
+        "cpu": "4 cores — Intel Core i5-7400 or AMD Ryzen 3 1200",
+        "ram": "8 GB RAM",
+        "gpu": "DirectX 11 GPU with 2 GB VRAM (GTX 1050 / RX 560 / Intel Iris Xe)",
+        "directX": "Version 11",
+        "storage": "1 GB available space"
+      },
+      "recommended": {
+        "os": "Windows 10 / 11 (64-bit)",
+        "cpu": "Intel Core i5-10400 or AMD Ryzen 5 3600",
+        "ram": "16 GB RAM",
+        "gpu": "GeForce GTX 1660 or Radeon RX 5600 XT (4 GB VRAM)",
+        "directX": "Version 11",
+        "storage": "1 GB available space"
+      }
+    },
+    "mac": {
+      "minimum": {
+        "os": "macOS 12 Monterey",
+        "cpu": "Apple M1 (Apple Silicon only)",
+        "ram": "8 GB RAM",
+        "gpu": "Integrated Apple Silicon GPU",
+        "notes": "Intel-based Macs are NOT supported"
+      },
+      "recommended": {
+        "os": "macOS 14 Sonoma or newer",
+        "cpu": "Apple M1 Pro, M2, or newer",
+        "ram": "16 GB RAM",
+        "gpu": "Apple Silicon GPU",
+        "notes": "Intel-based Macs are NOT supported"
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "question": "Is No Asteroids (\"No Asteroid\") free to play, and does Demo progress carry over?",
+    "answer": "The full version of No Asteroids costs $7.99 on Steam (with a 20% launch discount to $6.39 until December 8, 2026). However, there is a free Steam Demo covering the first 15 days of the 90-day contract, and your save files automatically carry over to the full game if played on the same computer."
+  },
+  {
+    "question": "Is No Asteroids coming to PS5, Xbox, Switch, or Mobile?",
+    "answer": "No console (PS5, Xbox, Nintendo Switch) or mobile (iOS/Android) versions have been announced as of launch. Currently, No Asteroids is exclusively available on PC (Windows 10+ 64-bit) and Apple Silicon macOS via Steam."
+  },
+  {
+    "question": "Does No Asteroids work on Steam Deck and Intel Macs?",
+    "answer": "Intel-based Macs are explicitly NOT supported—macOS support requires an Apple Silicon (M1 or newer) chip. On Steam Deck, the game runs the Windows build through Steam's Proton compatibility layer; adjust graphics settings if voxel deformation causes frame drops."
+  },
+  {
+    "question": "Are there official cheat codes, console commands, or built-in mods?",
+    "answer": "No. Unruled Games has not included official cheat codes, redeem codes, or built-in Steam Workshop mod support. If you want a relaxed playthrough without the 90-day pressure, choose the built-in No Rush mode."
+  },
+  {
+    "question": "How does 8-player online co-op work with shared money and saves?",
+    "answer": "Campaign progress is saved on the host's PC across up to 5 save slots. Mined ore credits go into a shared crew wallet controlled by the host's permission settings, while hosts can toggle whether equipment loadouts are shared or personal. Use the T key for text chat and watch teammate outlines visible through rock."
+  },
+  {
+    "question": "Where is the No Asteroids save file located?",
+    "answer": "On Windows, local save data typically sits under C:\\Users\\<YourUsername>\\AppData\\LocalLow\\ (look for the Unruled Games / No Asteroids folder). On Steam Deck (Proton), check /home/deck/.local/share/Steam/steamapps/compatdata/5527800/pfx/drive_c/users/steamuser/AppData/LocalLow/."
+  },
+  {
+    "question": "How is No Asteroids different from Drink the Ocean?",
+    "answer": "Both are viral first-person incremental simulation games with absurd premises, which is why they often appear together in search trends. No Asteroids (by Unruled Games, $7.99 on Steam) has you mine a 5,000,000 m³ asteroid in 90 days solo or in 8-player co-op. Drink the Ocean (by Pinidi Studio) is a free browser/mobile incremental game where you drink the world's oceans through a straw."
+  }
+]
