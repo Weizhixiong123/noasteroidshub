@@ -1,4 +1,4 @@
-import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml } from "../templates/layout.mjs";
+import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml, renderShot } from "../templates/layout.mjs";
 
 export function renderAchievementsPage(achievementsData) {
   const title = "No Asteroids Achievements Guide: All 65 With Unlock Rates & Tips";
@@ -96,7 +96,8 @@ export function renderAchievementsPage(achievementsData) {
 
   const content = `
     <section class="page-header">
-      <div class="container">
+      <div class="container page-header-split">
+        <div>
         ${renderBreadcrumbs(crumbs)}
         <h1>No Asteroids achievements guide: all ${total} with unlock rates</h1>
         <p class="lead">
@@ -104,6 +105,8 @@ export function renderAchievementsPage(achievementsData) {
           how to unlock it, and the share of players who have it (Steam global stats, snapshot ${escapeHtml(snapshot)}).
           Tick them off below—your checklist saves locally in your browser.
         </p>
+        </div>
+        ${renderShot("telescope-support-rally", "Telescope view of a cartoon Keep Working rally on Earth", "Through the ship telescope: a “Keep working” rally back on Earth.", { eager: true })}
       </div>
     </section>
 

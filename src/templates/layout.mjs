@@ -16,6 +16,18 @@ export function escapeHtml(str) {
     .replaceAll("'", "&#39;");
 }
 
+const SHOT_CREDIT = "Screenshot: Unruled Games / Steam";
+
+export function renderShot(slug, alt, caption, { eager = false, className = "shot" } = {}) {
+  const base = `/img/screens/${slug}`;
+  return `<figure class="${className}">
+          <a href="${base}-1280.webp" class="shot-link">
+            <img src="${base}-1280.webp" srcset="${base}-640.webp 640w, ${base}-1280.webp 1280w" sizes="(max-width: 960px) 100vw, 560px" width="1280" height="720" alt="${escapeHtml(alt)}"${eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async">
+          </a>
+          <figcaption>${escapeHtml(caption)} <span class="shot-credit">${SHOT_CREDIT}</span></figcaption>
+        </figure>`;
+}
+
 export function renderJsonLd(obj) {
   const safeJson = JSON.stringify(obj).replaceAll("<", "\\u003c");
   return `<script type="application/ld+json">${safeJson}</script>`;
@@ -57,7 +69,7 @@ export function renderLayout({
   content
 }) {
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
-  const ogImage = `${SITE_URL}/og-card.svg`;
+  const ogImage = `${SITE_URL}/og-card.jpg`;
 
   const navHtml = NAV_ITEMS.map((item) => {
     const active = item.href === currentPath ? ' aria-current="page"' : "";
@@ -85,6 +97,8 @@ export function renderLayout({
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${escapeHtml(canonicalUrl)}">
   <meta property="og:image" content="${escapeHtml(ogImage)}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
@@ -124,7 +138,7 @@ export function renderLayout({
       <div class="footer-grid">
         <div>
           <p><strong>${escapeHtml(SITE_NAME)}</strong> is an independent player database, 90-day mining calculator, and strategy guide for <em>No Asteroids</em> by Unruled Games.</p>
-          <p><strong>Unofficial fan resource:</strong> Not affiliated with, endorsed by, or sponsored by Unruled Games or Valve/Steam. Prices and stats are cross-checked against community wikis and marked when unconfirmed.</p>
+          <p><strong>Unofficial fan resource:</strong> Not affiliated with, endorsed by, or sponsored by Unruled Games or Valve/Steam. Prices and stats are cross-checked against community wikis and marked when unconfirmed. Game screenshots &copy; Unruled Games, shown for reference.</p>
         </div>
         <div>
           <h3>Guides and database</h3>

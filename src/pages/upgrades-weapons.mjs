@@ -1,4 +1,4 @@
-import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml } from "../templates/layout.mjs";
+import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml, renderShot } from "../templates/layout.mjs";
 
 const fmt = (n, digits = 2) => (Number.isInteger(n) ? String(n) : n.toFixed(digits));
 
@@ -133,13 +133,16 @@ export function renderUpgradesWeaponsPage(gameData) {
 
   const content = `
     <section class="page-header">
-      <div class="container">
+      <div class="container page-header-split">
+        <div>
         ${renderBreadcrumbs(crumbs)}
         <h1>No Asteroids tools, ship guns, and upgrade prices</h1>
         <p class="lead">
           All ${tools.length} handheld tools, all ${guns.length} ship guns, the ${slots.total} ship slots, drones, charges and gun upgrades—with prices and stats in one place.
           Jump to <a href="#lance-vs-slicer">Lance vs Slicer</a> or <a href="#best-ship-guns">best ship guns</a>.
         </p>
+        </div>
+        ${renderShot("workshop-tools", "The Workshop screen listing handheld tools and their upgrades", "The Workshop, where handheld tools are bought and upgraded.", { eager: true })}
       </div>
     </section>
 

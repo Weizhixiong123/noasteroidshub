@@ -1,4 +1,4 @@
-import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml } from "../templates/layout.mjs";
+import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml, renderShot } from "../templates/layout.mjs";
 
 const ORE_SWATCHES = {
   "Space Ice": "#7dd3fc",
@@ -63,13 +63,16 @@ export function renderOresEconomyPage(gameData) {
 
   const content = `
     <section class="page-header">
-      <div class="container">
+      <div class="container page-header-split">
+        <div>
         ${renderBreadcrumbs(crumbs)}
         <h1>No Asteroids all ores, minerals, and market price drop guide</h1>
         <p class="lead">
           Sell prices for all ${ores.length} ores—from <strong>Space Ice</strong> ($3) to <strong>Antimatter</strong> ($150) and the new
           <a href="/strange-matter/">Strange Matter</a> heart—plus which tool breaks each rock layer and how to keep payouts high.
         </p>
+        </div>
+        ${renderShot("pickaxe-star-gold", "A pickaxe striking a glowing Star Gold vein", "Breaking a Star Gold vein with the pickaxe.", { eager: true })}
       </div>
     </section>
 

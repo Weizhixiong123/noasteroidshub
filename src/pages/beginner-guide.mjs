@@ -1,4 +1,4 @@
-import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml } from "../templates/layout.mjs";
+import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml, renderShot } from "../templates/layout.mjs";
 import { STEAM_URL } from "../config.mjs";
 
 export function renderBeginnerGuidePage(gameData) {
@@ -15,13 +15,16 @@ export function renderBeginnerGuidePage(gameData) {
 
   const content = `
     <section class="page-header">
-      <div class="container">
+      <div class="container page-header-split">
+        <div>
         ${renderBreadcrumbs(crumbs)}
         <h1>No Asteroids beginner guide, tips, and buyer verdict</h1>
         <p class="lead">
           If you spotted <em>No Asteroids</em> (often searched as &ldquo;No Asteroid&rdquo;) on Steam, Reddit, or YouTube and want to know
           whether it is worth ${escapeHtml(gameData.meta.launchDiscountPrice)}—and how to survive your first 15 days—start here.
         </p>
+        </div>
+        ${renderShot("pickaxe-surface-coop", "First-person view of a pickaxe on the asteroid surface with two co-op miners nearby", "Starting out: the pickaxe on the surface, with co-op crewmates nearby.", { eager: true })}
       </div>
     </section>
 

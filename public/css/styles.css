@@ -357,7 +357,9 @@ p {
 .hero-rig {
   position: relative;
   background:
-    radial-gradient(ellipse 70% 55% at 78% 115%, rgba(90, 167, 232, 0.28), transparent 70%),
+    linear-gradient(90deg, rgba(12, 22, 48, 0.98) 0%, rgba(12, 22, 48, 0.95) 50%, rgba(12, 22, 48, 0.6) 100%),
+    linear-gradient(0deg, rgba(12, 22, 48, 0.85) 0%, transparent 35%),
+    url("/img/screens/bridge-navigation-1280.webp") center / cover no-repeat,
     var(--space);
   color: var(--space-ink);
   padding: 3.25rem 0 3.5rem;
@@ -481,6 +483,70 @@ p {
 
 .viewport-footer strong {
   color: var(--suit);
+}
+
+/* ───────── Game screenshots: framed like the hero porthole ───────── */
+.shot {
+  margin: 0;
+}
+
+.shot-link {
+  display: block;
+  border: 6px solid #1d2a4b;
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px #2c3c64;
+  overflow: hidden;
+  background: #050a18;
+}
+
+.shot-link:focus-visible {
+  outline-offset: 3px;
+}
+
+.shot img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.shot figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.shot-credit {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+}
+
+.page-header .shot figcaption {
+  color: var(--space-muted);
+}
+
+.page-header .shot-credit {
+  color: #6f7c9b;
+}
+
+.page-header-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.shot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem 1.25rem;
+}
+
+.shot-grid .shot-link {
+  border-width: 4px;
+  border-radius: 12px;
 }
 
 /* ───────── Subpage header (still on the ship) ───────── */
@@ -1334,6 +1400,7 @@ td:first-child {
 
 @media (max-width: 960px) {
   .hero-split,
+  .page-header-split,
   .calc-grid,
   .hub-featured,
   .grid-3,
@@ -1357,7 +1424,14 @@ td:first-child {
   }
 }
 
+@media (max-width: 960px) {
+  .shot-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 640px) {
+  .shot-grid,
   .grid-2,
   .stat-boxes {
     grid-template-columns: 1fr;

@@ -1,4 +1,4 @@
-import { renderLayout, escapeHtml } from "../templates/layout.mjs";
+import { renderLayout, escapeHtml, renderShot } from "../templates/layout.mjs";
 import { SITE_NAME, SITE_URL, STEAM_URL } from "../config.mjs";
 
 export function renderHomePage(gameData) {
@@ -121,6 +121,25 @@ export function renderHomePage(gameData) {
               <span class="ledger-value">Very Positive (~90%)</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>What No Asteroids looks like</h2>
+            <p class="section-sub">Official screenshots from the Steam page. Select one to open it full size.</p>
+          </div>
+        </div>
+        <div class="shot-grid">
+          ${renderShot("laser-meteoric-iron-drones", "Lasering a meteoric iron vein with drones flying nearby and Earth overhead", "Day 46: lasering meteoric iron while drones work alongside. The big number is the volume left.")}
+          ${renderShot("bridge-navigation", "The ship bridge with a navigation display showing rendezvous in 21 days", "The bridge on Day 70, with 21 days left until impact.")}
+          ${renderShot("ship-gun-slots", "The ship gun screen with numbered hull slots and a grid of guns", "Fitting guns to the ship's six hull slots.")}
+          ${renderShot("ore-sell-terminal", "Ship terminal showing ore stock and sell prices", "Selling ore at the terminal. Prices shift as you sell.")}
+          ${renderShot("missile-swarm-earth", "Missile Swarm explosions on the asteroid surface with Earth in the sky", "Late game: the Missile Swarm tearing into the surface.")}
+          ${renderShot("drill-blast", "Drill in hand while a charge explodes on the surface", "Drilling while a charge goes off down the slope.")}
         </div>
       </div>
     </section>

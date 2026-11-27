@@ -1,4 +1,4 @@
-import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml } from "../templates/layout.mjs";
+import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml, renderShot } from "../templates/layout.mjs";
 
 export function renderStrangeMatterPage(gameData) {
   const src = gameData.meta.dataSources;
@@ -65,13 +65,16 @@ export function renderStrangeMatterPage(gameData) {
 
   const content = `
     <section class="page-header">
-      <div class="container">
+      <div class="container page-header-split">
+        <div>
         ${renderBreadcrumbs(crumbs)}
         <h1>No Asteroids Strange Matter: where it is and how to break it</h1>
         <p class="lead">
           Strange Matter is the new asteroid heart added in the November 25, 2026 update. It sits at the center, below core metal,
           and only four pieces of gear can break it.
         </p>
+        </div>
+        ${renderShot("plasma-cutter-tunnel", "A plasma cutter boring a glowing tunnel deep into the asteroid", "Tunnelling deep toward the core with the plasma cutter.", { eager: true })}
       </div>
     </section>
 

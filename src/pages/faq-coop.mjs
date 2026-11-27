@@ -1,4 +1,4 @@
-import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml } from "../templates/layout.mjs";
+import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml, renderShot } from "../templates/layout.mjs";
 import { STEAM_COMMUNITY_URL } from "../config.mjs";
 
 export function renderFaqCoopPage(gameData, faqList) {
@@ -44,7 +44,8 @@ export function renderFaqCoopPage(gameData, faqList) {
 
   const content = `
     <section class="page-header">
-      <div class="container">
+      <div class="container page-header-split">
+        <div>
         ${renderBreadcrumbs(crumbs)}
         <h1>No Asteroids co-op guide, save files, system specs, and FAQ</h1>
         <p class="lead">
@@ -58,6 +59,8 @@ export function renderFaqCoopPage(gameData, faqList) {
           <a href="#faq">Platforms and FAQ</a>
           <a href="#similar">Games like No Asteroids</a>
         </nav>
+        </div>
+        ${renderShot("coop-crew-laser", "Three co-op miners in orange suits working the surface together", "A co-op crew on Day 35, working the same face of the rock.", { eager: true })}
       </div>
     </section>
 

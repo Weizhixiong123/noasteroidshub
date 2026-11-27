@@ -1,4 +1,4 @@
-import { renderLayout, renderBreadcrumbs, breadcrumbSchema } from "../templates/layout.mjs";
+import { renderLayout, renderBreadcrumbs, breadcrumbSchema, renderShot } from "../templates/layout.mjs";
 import { SITE_URL } from "../config.mjs";
 
 export function renderCalculatorPage() {
@@ -30,13 +30,16 @@ export function renderCalculatorPage() {
 
   const content = `
     <section class="page-header">
-      <div class="container">
+      <div class="container page-header-split">
+        <div>
         ${renderBreadcrumbs(crumbs)}
         <h1>No Asteroids 90-day mining calculator and quota planner</h1>
         <p class="lead">
           Enter your current campaign day, remaining cubic meters (out of <strong>5,000,000 m³</strong>),
           and crew size (<strong>1–8 players</strong>) to calculate required daily output and watch the rock shrink live.
         </p>
+        </div>
+        ${renderShot("laser-volume-counter", "Laser mining with the remaining asteroid volume counter at the top of the screen", "The counter at the top is what you are racing: the asteroid volume left.", { eager: true })}
       </div>
     </section>
 

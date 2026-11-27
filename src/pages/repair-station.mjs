@@ -1,4 +1,4 @@
-import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml } from "../templates/layout.mjs";
+import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml, renderShot } from "../templates/layout.mjs";
 
 const SECTIONS = [
   { name: "Hangar", bonus: "Cargo hold +3%" },
@@ -58,12 +58,15 @@ export function renderRepairStationPage(gameData) {
 
   const content = `
     <section class="page-header">
-      <div class="container">
+      <div class="container page-header-split">
+        <div>
         ${renderBreadcrumbs(crumbs)}
         <h1>No Asteroids Repair Station and how to clean the ship</h1>
         <p class="lead">
           The starting sprayer only washes the lander. The <strong>Repair Station</strong> ($50,000, from Day 28) is what cleans and repairs the ship—and each restored section gives a permanent bonus.
         </p>
+        </div>
+        ${renderShot("hangar-lander", "The ship hangar on Day 30 with the lander on its pad", "The hangar, with the lander parked on its pad.", { eager: true })}
       </div>
     </section>
 
