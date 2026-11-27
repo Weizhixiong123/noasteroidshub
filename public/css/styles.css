@@ -892,6 +892,14 @@ tbody tr:hover {
   color: #cfcabd;
 }
 
+.ach-rate {
+  margin-left: auto;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
 .ach-tip {
   margin: 0;
   font-size: 0.84rem;

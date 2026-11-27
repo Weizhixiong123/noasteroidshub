@@ -9,6 +9,8 @@ import { renderOresEconomyPage } from "../src/pages/ores-economy.mjs";
 import { renderAchievementsPage } from "../src/pages/achievements-endings.mjs";
 import { renderCalculatorPage } from "../src/pages/calculator.mjs";
 import { renderFaqCoopPage } from "../src/pages/faq-coop.mjs";
+import { renderRepairStationPage } from "../src/pages/repair-station.mjs";
+import { renderStrangeMatterPage } from "../src/pages/strange-matter.mjs";
 import { renderNotFoundPage } from "../src/pages/not-found.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -78,6 +80,20 @@ async function build() {
       priority: "0.8",
       changefreq: "weekly",
       html: renderFaqCoopPage(gameData, faqList)
+    },
+    {
+      route: "/repair-station/",
+      file: "repair-station/index.html",
+      priority: "0.8",
+      changefreq: "weekly",
+      html: renderRepairStationPage(gameData)
+    },
+    {
+      route: "/strange-matter/",
+      file: "strange-matter/index.html",
+      priority: "0.8",
+      changefreq: "weekly",
+      html: renderStrangeMatterPage(gameData)
     }
   ];
 

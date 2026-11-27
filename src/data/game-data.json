@@ -19,248 +19,420 @@
     "asteroidVolumeM3": 5000000,
     "campaignDays": 90,
     "saveSlots": 5,
-    "totalAchievements": 65
+    "totalAchievements": 65,
+    "shipSlots": 6,
+    "dataSources": {
+      "checked": "2026-11-27",
+      "gameVersion": "1.0.6 (Nov 25, 2026 updates)",
+      "note": "Prices and stats are cross-checked against community wikis (wikily.gg, noasteroidss.wiki, noasteroidsguide.wiki), not official Unruled Games data. Patches change numbers."
+    }
   },
   "handheldTools": [
     {
-      "tier": 1,
       "name": "Pickaxe",
-      "category": "Handheld Tool",
-      "role": "Starter Tool",
-      "unlockCost": "Starter",
-      "dpsOrPower": "TBD (Verifying)",
-      "notes": "Your initial mining tool on Day 1. Best used only to reach early surface veins and fund your first upgrades and ship weapon slot."
+      "price": "Free",
+      "priceCrew2": "Free",
+      "priceCrew3": "Free",
+      "breaks": "Regolith, Stone",
+      "unlock": "Starter",
+      "notes": "Your Day 1 tool. Fine for surface veins; replace it as soon as you can."
     },
     {
-      "tier": 2,
       "name": "Sledgehammer",
-      "category": "Handheld Tool",
-      "role": "Early Heavy Impact",
-      "unlockCost": "TBD (Verifying)",
-      "dpsOrPower": "TBD (Verifying)",
-      "notes": "First major upgrade after the Pickaxe, breaking dense surface rock chunks faster per swing."
+      "price": "$500",
+      "priceCrew2": "$500",
+      "priceCrew3": "$500",
+      "breaks": "Regolith, Stone",
+      "unlock": "Workshop",
+      "notes": "Cheapest upgrade and usually the first purchase (Heavy argument)."
     },
     {
-      "tier": 3,
       "name": "Drill",
-      "category": "Handheld Tool",
-      "role": "Sustained Tunneling",
-      "unlockCost": "TBD (Verifying)",
-      "dpsOrPower": "TBD (Verifying)",
-      "notes": "Ideal for boring straight corridors toward deep mineral veins detected on your HUD mineral scanner."
+      "price": "$2,000",
+      "priceCrew2": "$2,000",
+      "priceCrew3": "$2,000",
+      "breaks": "Deep stone",
+      "unlock": "Workshop",
+      "notes": "Opens the deep-stone layer (roughly 55–70% of the radius from the center)."
     },
     {
-      "tier": 4,
       "name": "Laser",
-      "category": "Handheld Tool",
-      "role": "Precision & Ranged Extraction",
-      "unlockCost": "TBD (Verifying)",
-      "dpsOrPower": "TBD (Verifying)",
-      "notes": "Allows safer extraction from a distance—helpful when carving around unstable pockets or overhead veins."
+      "price": "$42,000",
+      "priceCrew2": "$63,000",
+      "priceCrew3": "$84,000",
+      "breaks": "Basalt",
+      "unlock": "Workshop",
+      "notes": "First big price jump. Needed for basalt (roughly 40–55% from the center)."
     },
     {
-      "tier": 5,
       "name": "Plasma Cutter",
-      "category": "Handheld Tool",
-      "role": "High-Output Modular Cutter",
-      "unlockCost": "TBD (Verifying)",
-      "dpsOrPower": "TBD (Verifying)",
-      "branches": ["Hit", "Tempo", "Sweep", "Luck"],
-      "notes": "Features four confirmed upgrade branches: Hit (damage per cut), Tempo (fire/swing speed), Sweep (area coverage), and Luck (bonus yield/finds)."
+      "price": "$125,000",
+      "priceCrew2": "$187,500",
+      "priceCrew3": "$250,000",
+      "breaks": "Basalt and faster clearing",
+      "unlock": "Workshop",
+      "notes": "Mid-game workhorse before the missile swarm."
     },
     {
-      "tier": 6,
       "name": "Missile Swarm",
-      "category": "Handheld Tool",
-      "role": "Endgame Handheld Ordinance",
-      "unlockCost": "TBD (Verifying)",
-      "dpsOrPower": "TBD (Verifying)",
-      "modes": ["Spread Fire", "Tunnel Mode"],
-      "notes": "Top-tier handheld gear with tactical toggle modes: Spread Fire for wide surface clearing and Tunnel Mode for punching deep shafts."
+      "price": "$600,000",
+      "priceCrew2": "$900,000",
+      "priceCrew3": "$1,200,000",
+      "breaks": "Core metal",
+      "unlock": "Workshop",
+      "notes": "The practical tool for core metal (center to ~40%). In No Rush it can also chip strange matter at half strength."
+    },
+    {
+      "name": "Lance",
+      "price": "$1,200,000",
+      "priceCrew2": "$1,200,000",
+      "priceCrew3": "$1,200,000",
+      "breaks": "Strange matter",
+      "unlock": "Appears after you own an Orbital Strike or Collapsar, or after hitting core metal with a mining tool in the current Year",
+      "notes": "Bores a tunnel. Since 1.0.6 it no longer pushes you back; it has a charged fire mode."
+    },
+    {
+      "name": "Slicer",
+      "price": "$1,200,000",
+      "priceCrew2": "$1,200,000",
+      "priceCrew3": "$1,200,000",
+      "breaks": "Strange matter",
+      "unlock": "Same unlock as the Lance",
+      "notes": "Cuts a flat sheet. Since 1.0.6 it cuts three times as often."
     }
   ],
   "shipWeapons": [
     {
-      "name": "Basic Turrets / Autocannons",
-      "category": "Ship Weapon",
-      "stage": "Early Game",
-      "cost": "TBD (Verifying)",
-      "role": "Continuous Exterior Chipping",
-      "notes": "Your mothership begins completely unarmed. Mounting your first roof gun unlocks 'Gun on the roof' and passively removes m³ while you mine inside."
+      "name": "Turret",
+      "price": "$500",
+      "priceValue": 500,
+      "damage": 0.5,
+      "radius": 2.1,
+      "rate": "2.6 / s",
+      "shotsPerSecond": 2.6,
+      "notes": "Cheapest gun. Mounting any gun unlocks Gun on the roof."
     },
     {
-      "name": "Rockets",
-      "category": "Ship Weapon",
-      "stage": "Early–Mid Game",
-      "cost": "TBD (Verifying)",
-      "role": "Burst Area Excavation",
-      "notes": "Fires explosive salvos into the asteroid hull to clear outer layers faster than kinetic turrets."
+      "name": "Autocannon",
+      "price": "$8,000",
+      "priceValue": 8000,
+      "damage": 0.35,
+      "radius": 2.2,
+      "rate": "10 / s",
+      "shotsPerSecond": 10,
+      "notes": "Very high fire rate for the price—strong early value."
+    },
+    {
+      "name": "Seismic Cannon",
+      "price": "$30,000",
+      "priceValue": 30000,
+      "damage": 1.1,
+      "radius": 6.3,
+      "rate": "every 6.7 s",
+      "shotsPerSecond": 0.14925373134328357,
+      "notes": "Slow but wide blasts."
     },
     {
       "name": "Railgun",
-      "category": "Ship Weapon",
-      "stage": "Mid Game",
-      "cost": "TBD (Verifying)",
-      "role": "High-Velocity Piercing",
-      "notes": "High-impact kinetic cannon suited for cracking denser mid-crust rock formations."
+      "price": "$40,000",
+      "priceValue": 40000,
+      "damage": 1.5,
+      "radius": 6.3,
+      "rate": "every 2 s",
+      "shotsPerSecond": 0.5,
+      "notes": "Wide radius at a mid-game price."
     },
     {
       "name": "Mass Driver",
-      "category": "Ship Weapon",
-      "stage": "Mid–Late Game",
-      "cost": "TBD (Verifying)",
-      "role": "Heavy Volume Demolition",
-      "notes": "Sustained heavy bombardment designed to keep pace with escalating daily quota demands."
+      "price": "$90,000",
+      "priceValue": 90000,
+      "damage": 1.6,
+      "radius": 3.3,
+      "rate": "every 3.1 s",
+      "shotsPerSecond": 0.3225806451612903,
+      "notes": "Heavy single shots, smaller radius than the railgun."
+    },
+    {
+      "name": "Rockets",
+      "price": "$100,000",
+      "priceValue": 100000,
+      "damage": 1,
+      "radius": 5,
+      "rate": "1.4 / s",
+      "shotsPerSecond": 1.4,
+      "notes": "Steady area damage."
+    },
+    {
+      "name": "Laser Beam",
+      "price": "$250,000",
+      "priceValue": 250000,
+      "damage": 0.3,
+      "radius": 3.2,
+      "rate": "22 / s",
+      "shotsPerSecond": 22,
+      "notes": "Highest raw damage per second of any gun."
     },
     {
       "name": "Orbital Strike",
-      "category": "Ship Weapon",
-      "stage": "Late Game",
-      "cost": "TBD (Verifying)",
-      "role": "Massive Area Bombardment",
-      "notes": "High-tier orbital demolition system capable of stripping huge sections of asteroid volume per cycle."
+      "price": "$300,000",
+      "priceValue": 300000,
+      "damage": 3,
+      "radius": 16.5,
+      "rate": "every 22 s",
+      "shotsPerSecond": 0.045454545454545456,
+      "notes": "Largest blast radius. Breaks strange matter and unlocks the Lance and Slicer. Keeps its normal price in The Hard Way."
     },
     {
-      "name": "Collapsar (Black Hole Weapon)",
-      "category": "Ship Weapon",
-      "stage": "Endgame",
-      "cost": "TBD (Verifying)",
-      "role": "Singularity Debris & Mass Clear",
-      "notes": "Fires a localized black hole that pulls massive chunks of rock and thousands of loose fragments inward, dramatically accelerating late-game clears."
-    },
-    {
-      "name": "Remaining 3 Ship Weapon Slots (9 Total)",
-      "category": "Ship Weapon",
-      "stage": "Community Verifying",
-      "cost": "TBD (Verifying)",
-      "role": "Full Hull Arsenal ('Armed to the teeth')",
-      "notes": "The mothership supports 9 total automated weapon systems/slots. Exact names and credit costs for the remaining 3 slots are being verified from full-release runs."
+      "name": "Collapsar",
+      "price": "$1,200,000",
+      "priceValue": 1200000,
+      "damage": 10,
+      "radius": 12,
+      "rate": "every 8 s",
+      "shotsPerSecond": 0.125,
+      "notes": "Black-hole gun with the highest damage per shot. Breaks strange matter and unlocks the Lance and Slicer."
     }
   ],
-  "utilitiesAndDrones": [
+  "shipSlots": {
+    "total": 6,
+    "prices": [
+      "Free",
+      "$4,000",
+      "$25,000",
+      "$90,000",
+      "$250,000",
+      "$500,000"
+    ],
+    "totalCost": "$869,000",
+    "note": "Per-slot mapping inferred from the community total of $869,000 for slots 2–6."
+  },
+  "gunUpgrades": [
     {
-      "name": "HUD Mineral Scanner",
-      "category": "Utility & Drone",
-      "unlock": "Built-in HUD Upgradeable",
-      "notes": "Color-codes and filters mineral veins through rock. Always scan before swinging so you never burn oxygen on barren tunnels."
+      "name": "Caliber",
+      "firstLevel": "$60,000",
+      "levels": 10,
+      "effect": "+6% shot radius per level"
     },
     {
-      "name": "Oxygen & Cargo Capacity Upgrades",
-      "category": "Utility & Drone",
-      "unlock": "Suit Upgrade Terminal",
-      "notes": "Prioritize these alongside early tools. Oxygen is your round-trip ticket; cargo capacity reduces wasted flights back to the lander."
+      "name": "Firepower",
+      "firstLevel": "$40,000",
+      "levels": 10,
+      "effect": "+8% power per level"
+    },
+    {
+      "name": "Rate of fire",
+      "firstLevel": "$50,000",
+      "levels": 10,
+      "effect": "+4% shots per second per level"
+    },
+    {
+      "name": "Ship hold",
+      "firstLevel": "$15,000",
+      "levels": 10,
+      "effect": "+40% ore room per level"
+    }
+  ],
+  "charges": [
+    {
+      "name": "Beacon",
+      "price": "$200",
+      "perPurchase": 1,
+      "maxCarried": 3,
+      "fromDay": 3
+    },
+    {
+      "name": "Plain charge",
+      "price": "$400",
+      "perPurchase": 3,
+      "maxCarried": 12,
+      "fromDay": 11
+    },
+    {
+      "name": "Shaped charge",
+      "price": "$1,200",
+      "perPurchase": 3,
+      "maxCarried": 6,
+      "fromDay": 14
+    },
+    {
+      "name": "Mining rig",
+      "price": "$6,000",
+      "perPurchase": 1,
+      "maxCarried": 3,
+      "fromDay": 17
+    },
+    {
+      "name": "Shaker charge",
+      "price": "$10,000",
+      "perPurchase": 2,
+      "maxCarried": 4,
+      "fromDay": 20
+    },
+    {
+      "name": "Singularity",
+      "price": "$25,000",
+      "perPurchase": 1,
+      "maxCarried": 3,
+      "fromDay": 23
+    }
+  ],
+  "drones": [
+    {
+      "name": "Digger",
+      "price": "$4,000",
+      "fromDay": 11,
+      "notes": "Cuts the rock around you."
+    },
+    {
+      "name": "Prospector",
+      "price": "$20,000",
+      "fromDay": 14,
+      "notes": "Mines ore around you, even under rock."
+    },
+    {
+      "name": "Oxygen drone",
+      "price": "$20,000",
+      "fromDay": 17,
+      "notes": "Tops up your suit's air."
+    },
+    {
+      "name": "Sapper",
+      "price": "$50,000",
+      "fromDay": 17,
+      "notes": "Plants charges and detonates them."
+    }
+  ],
+  "utilities": [
+    {
+      "name": "Tractor Beam",
+      "price": "$20,000",
+      "notes": "Ship system, needs no slot and can't be sold. Without it, ore knocked loose by ship guns is lost."
+    },
+    {
+      "name": "Repair Station",
+      "price": "$50,000",
+      "notes": "Supply kiosk item from Day 28 (Year 1). Cleans and repairs the ship section by section for permanent bonuses.",
+      "href": "/repair-station/"
+    },
+    {
+      "name": "Compactor",
+      "price": "Not confirmed",
+      "notes": "Upgrade-station item that raises cargo capacity for specific ores each level; the tooltip shows the next level's bonus."
     },
     {
       "name": "Jetpack",
-      "category": "Utility & Drone",
-      "unlock": "Suit / Gear Shop ('Rocketeer')",
-      "notes": "Dramatically improves vertical mobility inside deep craters and speeds up emergency returns before lander liftoff."
-    },
-    {
-      "name": "Tractor Beam",
-      "category": "Utility & Drone",
-      "unlock": "Ship / Suit Utility",
-      "notes": "Pulls floating ore fragments and drifting debris toward you or the collection zone without manual chasing."
-    },
-    {
-      "name": "Digger / Prospector / Sapper Systems",
-      "category": "Utility & Drone",
-      "unlock": "Automated Drones & Roles",
-      "notes": "Specialized automation/role systems: Digger (autonomous rock breaking), Prospector (resource gathering/vein assist), and Sapper (explosive charges)."
+      "price": "Not confirmed",
+      "notes": "Buying it unlocks Rocketeer. Flights were lengthened in the Nov 25 update."
     }
   ],
   "ores": [
     {
       "name": "Space Ice",
-      "layer": "Surface / Crust",
-      "tier": "Early",
-      "baseValue": "TBD (Verifying)",
-      "mineralogistCore": true,
-      "hazard": "None",
-      "notes": "Abundant near the outer shell. Reliable starter cash before deeper veins open up."
+      "usualPrice": "$3",
+      "priceRange": "$2–$4",
+      "breaks": "Any tool",
+      "notes": "Starter cash; lowest value."
     },
     {
       "name": "Meteoric Iron",
-      "layer": "Surface – Mid Crust",
-      "tier": "Early",
-      "baseValue": "TBD (Verifying)",
-      "mineralogistCore": true,
-      "hazard": "None",
-      "notes": "Primary early-game bread-and-butter ore. Watch terminal prices if you dump huge loads consecutively."
+      "usualPrice": "$5",
+      "priceRange": "$4–$7",
+      "breaks": "Any tool",
+      "notes": ""
     },
     {
       "name": "Nickel",
-      "layer": "Mid Crust",
-      "tier": "Early–Mid",
-      "baseValue": "TBD (Verifying)",
-      "mineralogistCore": true,
-      "hazard": "None",
-      "notes": "Commonly found alongside Meteoric Iron as you push past the outer crust."
+      "usualPrice": "$6",
+      "priceRange": "$5–$8",
+      "breaks": "Any tool",
+      "notes": ""
     },
     {
       "name": "Titanium",
-      "layer": "Mid – Deep Crust",
-      "tier": "Mid",
-      "baseValue": "TBD (Verifying)",
-      "mineralogistCore": true,
-      "hazard": "None",
-      "notes": "Higher-density structural ore that fuels mid-game drill, laser, and ship slot purchases."
+      "usualPrice": "$7",
+      "priceRange": "$5–$9",
+      "breaks": "Any tool",
+      "notes": ""
     },
     {
       "name": "Star Gold",
-      "layer": "Mid – Deep Veins",
-      "tier": "Mid–High",
-      "baseValue": "TBD (Verifying)",
-      "mineralogistCore": true,
-      "hazard": "None",
-      "notes": "High-value vein target worth filtering on your HUD mineral scanner."
+      "usualPrice": "$9",
+      "priceRange": "$7–$12",
+      "breaks": "Any tool",
+      "notes": ""
     },
     {
       "name": "Space Crystal",
-      "layer": "Mid – Deep Mantle",
-      "tier": "Mid–High",
-      "baseValue": "TBD (Verifying)",
-      "mineralogistCore": true,
-      "hazard": "None",
-      "notes": "Distinctive crystalline pockets offering strong value-per-cargo-slot returns."
+      "usualPrice": "$16",
+      "priceRange": "$12–$22",
+      "breaks": "Any tool",
+      "notes": ""
     },
     {
       "name": "Plasmite",
-      "layer": "Deep Mantle",
-      "tier": "High",
-      "baseValue": "TBD (Verifying)",
-      "mineralogistCore": true,
-      "hazard": "Moderate",
-      "notes": "Deep-layer high-payout resource needed to finance Plasma Cutter branches and heavy ship turrets."
+      "usualPrice": "$26",
+      "priceRange": "$20–$35",
+      "breaks": "Any tool",
+      "notes": ""
     },
     {
       "name": "Neutronium",
-      "layer": "Deep Core",
-      "tier": "Late",
-      "baseValue": "TBD (Verifying)",
-      "mineralogistCore": true,
-      "hazard": "Dense Rock",
-      "notes": "Ultra-dense deep core mineral requiring upgraded laser/plasma or explosive tools."
+      "usualPrice": "$45",
+      "priceRange": "$35–$60",
+      "breaks": "Damage ~3 (late tools)",
+      "notes": "Sits around the strange-matter heart at the center in new campaigns."
     },
     {
       "name": "Dark Matter",
-      "layer": "Asteroid Core",
-      "tier": "Exotic",
-      "baseValue": "TBD (Verifying)",
-      "mineralogistCore": false,
-      "hazard": "Deep Depth",
-      "notes": "Exotic late-game material found near the asteroid's center, helping bankroll endgame ship weapons."
+      "usualPrice": "$68",
+      "priceRange": "$51–$91",
+      "breaks": "Damage ~2.6 (late tools)",
+      "notes": ""
     },
     {
       "name": "Antimatter",
-      "layer": "Asteroid Core",
-      "tier": "Exotic / Volatile",
-      "baseValue": "TBD (Verifying)",
-      "mineralogistCore": false,
-      "hazard": "Explosive ('Boom' achievement)",
-      "notes": "Volatile core substance. Smashing Antimatter triggers a detonation (unlocks the 'Boom' Steam achievement)."
+      "usualPrice": "$150",
+      "priceRange": "$113–$202",
+      "breaks": "Any tool",
+      "notes": "Explodes when smashed (Boom achievement). Price was raised from about $56 on Nov 20."
+    },
+    {
+      "name": "Strange Matter",
+      "usualPrice": "Above antimatter (exact value not confirmed)",
+      "priceRange": "—",
+      "breaks": "Lance, Slicer, Orbital Strike or Collapsar only",
+      "notes": "New asteroid heart added Nov 25, 2026—only in new campaigns and new Years.",
+      "href": "/strange-matter/"
     }
   ],
+  "rockLayers": [
+    {
+      "name": "Regolith",
+      "depth": "Surface",
+      "breaks": "Pickaxe"
+    },
+    {
+      "name": "Stone",
+      "depth": "70–100% of radius from center",
+      "breaks": "Pickaxe"
+    },
+    {
+      "name": "Deep stone",
+      "depth": "55–70%",
+      "breaks": "Drill (damage ~1.2)"
+    },
+    {
+      "name": "Basalt",
+      "depth": "40–55%",
+      "breaks": "Laser class (damage ~1.9)"
+    },
+    {
+      "name": "Core metal",
+      "depth": "Center to ~40%",
+      "breaks": "Missile swarm in practice (damage ~2.3)"
+    }
+  ],
+  "rockStockNote": "From Day 35 of Year 1 (and every shift from Year 2), broken rock sells as \"Rock\" at a flat $2, ignoring glut.",
   "systemRequirements": {
     "windows": {
       "minimum": {

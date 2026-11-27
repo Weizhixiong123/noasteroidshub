@@ -124,15 +124,17 @@ export function renderLayout({
       <div class="footer-grid">
         <div>
           <p><strong>${escapeHtml(SITE_NAME)}</strong> is an independent player database, 90-day mining calculator, and strategy guide for <em>No Asteroids</em> by Unruled Games.</p>
-          <p><strong>Unofficial fan resource:</strong> Not affiliated with, endorsed by, or sponsored by Unruled Games or Valve/Steam. Confirmed release data is paired with explicit <code>TBD (Verifying)</code> markers for unverified values.</p>
+          <p><strong>Unofficial fan resource:</strong> Not affiliated with, endorsed by, or sponsored by Unruled Games or Valve/Steam. Prices and stats are cross-checked against community wikis and marked when unconfirmed.</p>
         </div>
         <div>
           <h3>Guides and database</h3>
           <ul class="footer-links">
             <li><a href="/">Home overview</a></li>
             <li><a href="/beginner-guide/">Beginner guide and review</a></li>
-            <li><a href="/upgrades-weapons/">Tools, drones, and ship weapons</a></li>
-            <li><a href="/ores-economy/">All ores and market decay</a></li>
+            <li><a href="/upgrades-weapons/">Tools, ship guns, and Lance vs Slicer</a></li>
+            <li><a href="/ores-economy/">All ores and sell prices</a></li>
+            <li><a href="/strange-matter/">Strange Matter guide</a></li>
+            <li><a href="/repair-station/">Repair Station and ship cleaning</a></li>
           </ul>
         </div>
         <div>

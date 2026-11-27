@@ -220,12 +220,12 @@ export function renderHomePage(gameData) {
         <div class="terminal-index">
           <div class="terminal-row">
             <h3>Tools, drones, and ship weapons</h3>
-            <p>All 6 handheld tiers (Pickaxe to Missile Swarm), Plasma Cutter upgrade branches, automated hull guns including the Collapsar, and solo vs. co-op buy order.</p>
+            <p>All 8 tools (Pickaxe to Lance and Slicer) and 9 ship guns with prices and stats, best ship guns, Lance vs Slicer, and solo vs. co-op buy order.</p>
             <a class="btn btn-secondary btn-sm" href="/upgrades-weapons/">Browse arsenal</a>
           </div>
           <div class="terminal-row">
             <h3>All ores and market decay guide</h3>
-            <p>Cross-section layer map from Space Ice to Antimatter, Mineralogist tracking, and why bulk-dumping one mineral cuts terminal payout.</p>
+            <p>Sell prices for all 11 ores, the new Strange Matter heart, which tool breaks each rock layer, and how to avoid glut price drops.</p>
             <a class="btn btn-secondary btn-sm" href="/ores-economy/">Check ores</a>
           </div>
           <div class="terminal-row">

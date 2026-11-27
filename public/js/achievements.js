@@ -3,7 +3,6 @@
   if (!root) return;
 
   const STORAGE_KEY = "noasteroidshub_achievements_v1";
-  const TOTAL_STEAM = 65;
 
   const items = Array.from(root.querySelectorAll("[data-ach-item]"));
   const filterBtns = Array.from(root.querySelectorAll("[data-ach-filter]"));
@@ -37,11 +36,11 @@
   };
 
   const updateSummary = () => {
-    const done = checkedSet.size;
+    const done = items.filter((item) => checkedSet.has(item.getAttribute("data-ach-id"))).length;
     const totalTracked = items.length;
     const pct = totalTracked > 0 ? (done / totalTracked) * 100 : 0;
     if (countEl) {
-      countEl.textContent = `${done} / ${totalTracked} Verified Tracked (${TOTAL_STEAM} Total on Steam)`;
+      countEl.textContent = `${done} / ${totalTracked} unlocked`;
     }
     if (fillEl) {
       fillEl.style.width = `${pct.toFixed(1)}%`;
@@ -118,8 +117,8 @@
       const payload = {
         game: "No Asteroids (Steam App ID 5527800)",
         exportedAt: new Date().toISOString(),
-        verifiedCheckedCount: checkedSet.size,
-        verifiedTotalCount: items.length,
+        checkedCount: checkedSet.size,
+        totalCount: items.length,
         checkedIds: Array.from(checkedSet)
       };
       const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });

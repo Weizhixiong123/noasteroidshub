@@ -1,223 +1,657 @@
 {
   "totalOnSteam": 65,
-  "verifiedCount": 31,
+  "verifiedCount": 65,
+  "globalPercentSnapshot": "2026-11-27",
   "achievements": [
+    {
+      "id": "fifty-down",
+      "name": "Fifty down",
+      "category": "Destruction",
+      "description": "Go 50 m below pad level.",
+      "tip": "Dig 50 m below the landing pad level. Watch your oxygen budget on the way back up.",
+      "apiName": "ACH_DEEP",
+      "globalPercent": 89.6,
+      "hidden": false
+    },
     {
       "id": "the-first-percent",
       "name": "The first percent",
       "category": "Destruction",
       "description": "Destroy 1% of the asteroid.",
-      "tip": "Clears naturally in the first few days once you start mining core veins and mount your first ship turret."
+      "tip": "Clears naturally in the first few days once you start mining core veins and mount your first ship turret.",
+      "apiName": "ACH_DESTROYED_1",
+      "globalPercent": 89.4,
+      "hidden": false
+    },
+    {
+      "id": "first-month",
+      "name": "First month",
+      "category": "Destruction",
+      "description": "Start day 30.",
+      "tip": "Simply start Day 30 on any save. Unlocks on a No Rush save as well as a normal contract.",
+      "apiName": "ACH_DAY_30",
+      "globalPercent": 80.7,
+      "hidden": false
     },
     {
       "id": "tithe",
       "name": "Tithe",
       "category": "Destruction",
       "description": "Destroy 10% of the asteroid.",
-      "tip": "500,000 m³ excavated. Use your HUD scanner to chain high-value veins and fund automated ship guns."
-    },
-    {
-      "id": "halfway-there",
-      "name": "Halfway there",
-      "category": "Destruction",
-      "description": "Destroy half of the asteroid.",
-      "tip": "2,500,000 m³ cleared. If you pass 50% around or before Day 45, automated ship scaling will carry your late game."
-    },
-    {
-      "id": "home-stretch",
-      "name": "Home stretch",
-      "category": "Destruction",
-      "description": "Destroy 90% of the asteroid.",
-      "tip": "4,500,000 m³ cleared (500,000 m³ remaining). Heavy ship ordnance like Orbital Strike and Collapsar make quick work of the last 10%."
-    },
-    {
-      "id": "earth-saved",
-      "name": "Earth saved",
-      "category": "Destruction",
-      "description": "Grind the asteroid down to zero.",
-      "tip": "Reduce remaining volume to 0 m³ before Earth impact to secure the full victory ending."
+      "tip": "500,000 m³ excavated. Chain high-value veins and reinvest early in cheap ship guns like the Autocannon.",
+      "apiName": "ACH_DESTROYED_10",
+      "globalPercent": 74.5,
+      "hidden": false
     },
     {
       "id": "straight-to-the-heart",
       "name": "Straight to the heart",
       "category": "Destruction",
       "description": "Reach the center of the asteroid.",
-      "tip": "Bore directly inward using Drill, Laser, or Missile Swarm in Tunnel Mode while budgeting extra return oxygen."
+      "tip": "Bore inward through stone, deep stone, basalt and core metal. You'll want the Missile Swarm for core metal, and in new campaigns the very center is strange matter.",
+      "apiName": "ACH_CORE",
+      "globalPercent": 65.8,
+      "hidden": false
+    },
+    {
+      "id": "quarter-gone",
+      "name": "Quarter gone",
+      "category": "Destruction",
+      "description": "Destroy a quarter of the asteroid.",
+      "tip": "1,250,000 m³ destroyed. A useful pace check: reaching 25% around Day 22–23 keeps you on a straight-line schedule for the 90-day contract.",
+      "apiName": "ACH_DESTROYED_25",
+      "globalPercent": 65.3,
+      "hidden": false
+    },
+    {
+      "id": "halfway-there",
+      "name": "Halfway there",
+      "category": "Destruction",
+      "description": "Destroy half of the asteroid.",
+      "tip": "2,500,000 m³ cleared. If you pass 50% around or before Day 45, automated ship scaling will carry your late game.",
+      "apiName": "ACH_DESTROYED_50",
+      "globalPercent": 57.2,
+      "hidden": false
+    },
+    {
+      "id": "apple-core",
+      "name": "Apple core",
+      "category": "Destruction",
+      "description": "Destroy three quarters of the asteroid.",
+      "tip": "3,750,000 m³ destroyed (1,250,000 m³ left). Usually arrives once ship guns are doing most of the volume.",
+      "apiName": "ACH_DESTROYED_75",
+      "globalPercent": 51.6,
+      "hidden": false
+    },
+    {
+      "id": "a-million-by-hand",
+      "name": "A million by hand",
+      "category": "Destruction",
+      "description": "Dig out 1,000,000 m³ without the ship's help.",
+      "tip": "1,000,000 m³ dug without ship guns counting. Handheld tools, drones and charges are your volume here—upgrade the Plasma Cutter or Missile Swarm and track it over a long run.",
+      "apiName": "ACH_OWN_1M",
+      "globalPercent": 50.3,
+      "hidden": false
+    },
+    {
+      "id": "home-stretch",
+      "name": "Home stretch",
+      "category": "Destruction",
+      "description": "Destroy 90% of the asteroid.",
+      "tip": "4,500,000 m³ cleared (500,000 m³ remaining). Heavy ship ordnance like Orbital Strike and Collapsar make quick work of the last 10%.",
+      "apiName": "ACH_DESTROYED_90",
+      "globalPercent": 49.0,
+      "hidden": false
+    },
+    {
+      "id": "earth-saved",
+      "name": "Earth saved",
+      "category": "Destruction",
+      "description": "Grind the asteroid down to zero.",
+      "tip": "Reduce remaining volume to 0 m³ before Earth impact to secure the full victory ending.",
+      "apiName": "ACH_ENDING_SAVED",
+      "globalPercent": 47.5,
+      "hidden": false
+    },
+    {
+      "id": "two-months-no-days-off",
+      "name": "Two months, no days off",
+      "category": "Destruction",
+      "description": "Start day 60.",
+      "tip": "Start Day 60. Pairs naturally with a full campaign run; check the calculator to see if your pace still finishes by Day 90.",
+      "apiName": "ACH_DAY_60",
+      "globalPercent": 45.3,
+      "hidden": false
     },
     {
       "id": "wide-awake",
       "name": "Wide awake",
       "category": "Destruction",
       "description": "Reach the end without ever blacking out.",
-      "tip": "Always leave an oxygen safety margin for your return trip and board the lander before liftoff in co-op."
+      "tip": "Always leave an oxygen safety margin for your return trip and board the lander before liftoff in co-op.",
+      "apiName": "ACH_NO_BLACKOUTS",
+      "globalPercent": 16.4,
+      "hidden": false
     },
     {
       "id": "complaints-accepted",
       "name": "Complaints accepted",
       "category": "Destruction",
       "description": "Let something reach Earth.",
-      "tip": "Failure / partial-impact ending triggered when the 90-day timer expires with asteroid mass still remaining."
+      "tip": "Failure / partial-impact ending triggered when the 90-day timer expires with asteroid mass still remaining.",
+      "apiName": "ACH_ENDING_IMPACT",
+      "globalPercent": 5.1,
+      "hidden": false
     },
     {
       "id": "something-shiny",
       "name": "Something shiny",
       "category": "Museum",
       "description": "Make your first find.",
-      "tip": "Keep an eye out for non-ore relics embedded in rock pockets while tunneling."
+      "tip": "Keep an eye out for non-ore relics embedded in rock pockets while tunneling.",
+      "apiName": "ACH_FIRST_FIND",
+      "globalPercent": 97.1,
+      "hidden": false
     },
     {
       "id": "collector",
       "name": "Collector",
       "category": "Museum",
       "description": "Make 10 finds.",
-      "tip": "Deposit recovered relics at your ship's museum/observation dome to track progress."
-    },
-    {
-      "id": "full-museum",
-      "name": "Full museum",
-      "category": "Museum",
-      "description": "Make every find.",
-      "tip": "Requires completing all 7 museum collections across surface, deep crust, core, and drifting space debris."
-    },
-    {
-      "id": "finders-keepers",
-      "name": "Finders keepers",
-      "category": "Museum",
-      "description": "Complete the \"Lost in orbit\" collection.",
-      "tip": "Watch for orbital debris and drifting finds around the asteroid exterior (pair with Tractor Beam)."
-    },
-    {
-      "id": "historian",
-      "name": "Historian",
-      "category": "Museum",
-      "description": "Complete the \"Space history\" collection.",
-      "tip": "Includes satirical space-age relics such as orbital tapes and historical space items."
-    },
-    {
-      "id": "online",
-      "name": "Online",
-      "category": "Museum",
-      "description": "Complete the \"Internet\" collection.",
-      "tip": "Relics tied to internet-era satire hidden inside asteroid strata."
-    },
-    {
-      "id": "someone-will-claim-it",
-      "name": "Someone will claim it",
-      "category": "Museum",
-      "description": "Complete the \"Lost and found\" collection.",
-      "tip": "Includes everyday satirical objects like office chairs and the empty safe labeled for defense budgets."
-    },
-    {
-      "id": "true-fan",
-      "name": "True fan",
-      "category": "Museum",
-      "description": "Complete the \"Sci-fi and games\" collection.",
-      "tip": "Pop-culture Easter egg artifacts scattered across medium and deep excavation layers."
+      "tip": "Deposit recovered relics at your ship's museum/observation dome to track progress.",
+      "apiName": "ACH_FINDS_10",
+      "globalPercent": 82.2,
+      "hidden": false
     },
     {
       "id": "gifts-of-the-deep",
       "name": "Gifts of the deep",
       "category": "Museum",
       "description": "Complete the \"From the depths\" collection.",
-      "tip": "Deep-interior relics found while pushing toward the asteroid core."
+      "tip": "Deep-interior relics found while pushing toward the asteroid core.",
+      "apiName": "ACH_SET_DEPTHS",
+      "globalPercent": 74.9,
+      "hidden": false
+    },
+    {
+      "id": "true-fan",
+      "name": "True fan",
+      "category": "Museum",
+      "description": "Complete the \"Sci-fi and games\" collection.",
+      "tip": "Pop-culture Easter egg artifacts scattered across medium and deep excavation layers.",
+      "apiName": "ACH_SET_FICTION",
+      "globalPercent": 46.7,
+      "hidden": false
     },
     {
       "id": "paleontologist",
       "name": "Paleontologist",
       "category": "Museum",
       "description": "Complete the \"Dinosaurs tried too\" collection.",
-      "tip": "Collect all fossil exhibits buried inside the asteroid rock."
+      "tip": "Collect all fossil exhibits buried inside the asteroid rock.",
+      "apiName": "ACH_SET_DINOS",
+      "globalPercent": 45.8,
+      "hidden": false
+    },
+    {
+      "id": "someone-will-claim-it",
+      "name": "Someone will claim it",
+      "category": "Museum",
+      "description": "Complete the \"Lost and found\" collection.",
+      "tip": "Includes everyday satirical objects like office chairs and the empty safe labeled for defense budgets.",
+      "apiName": "ACH_SET_LOSTFOUND",
+      "globalPercent": 45.5,
+      "hidden": false
+    },
+    {
+      "id": "online",
+      "name": "Online",
+      "category": "Museum",
+      "description": "Complete the \"Internet\" collection.",
+      "tip": "Relics tied to internet-era satire hidden inside asteroid strata.",
+      "apiName": "ACH_SET_INTERNET",
+      "globalPercent": 44.9,
+      "hidden": false
     },
     {
       "id": "reel-it-in",
       "name": "Reel it in",
       "category": "Museum",
       "description": "Catch a drifting find.",
-      "tip": "Grab a floating artifact drifting off into space after blasting open outer pockets."
+      "tip": "Grab a floating artifact drifting off into space after blasting open outer pockets.",
+      "apiName": "ACH_TRACTOR",
+      "globalPercent": 41.4,
+      "hidden": false
     },
     {
-      "id": "first-paycheck",
-      "name": "First paycheck",
-      "category": "Economy & Gear",
-      "description": "Sell some ore.",
-      "tip": "Return to the lander with mined Space Ice or Meteoric Iron and sell it at the ship terminal."
+      "id": "historian",
+      "name": "Historian",
+      "category": "Museum",
+      "description": "Complete the \"Space history\" collection.",
+      "tip": "Includes satirical space-age relics such as orbital tapes and historical space items.",
+      "apiName": "ACH_SET_HISTORY",
+      "globalPercent": 38.2,
+      "hidden": false
+    },
+    {
+      "id": "finders-keepers",
+      "name": "Finders keepers",
+      "category": "Museum",
+      "description": "Complete the \"Lost in orbit\" collection.",
+      "tip": "Watch for orbital debris and drifting finds around the asteroid exterior (pair with Tractor Beam).",
+      "apiName": "ACH_SET_ORBIT",
+      "globalPercent": 36.1,
+      "hidden": false
+    },
+    {
+      "id": "full-museum",
+      "name": "Full museum",
+      "category": "Museum",
+      "description": "Make every find.",
+      "tip": "Requires completing all 7 museum collections across surface, deep crust, core, and drifting space debris.",
+      "apiName": "ACH_FINDS_ALL",
+      "globalPercent": 30.6,
+      "hidden": false
     },
     {
       "id": "quota-met",
       "name": "Quota met",
       "category": "Economy & Gear",
       "description": "Complete an order of the day.",
-      "tip": "Check the terminal's daily order request and prioritize those specific ores for bonus income."
+      "tip": "Check the terminal's daily order request and prioritize those specific ores for bonus income.",
+      "apiName": "ACH_ORDER",
+      "globalPercent": 99.9,
+      "hidden": false
     },
     {
-      "id": "mineralogist",
-      "name": "Mineralogist",
+      "id": "first-paycheck",
+      "name": "First paycheck",
       "category": "Economy & Gear",
-      "description": "Find all eight minerals.",
-      "tip": "Mine all 8 core minerals (Space Ice, Meteoric Iron, Nickel, Titanium, Star Gold, Space Crystal, Plasmite, Neutronium)."
+      "description": "Sell some ore.",
+      "tip": "Return to the lander with mined Space Ice or Meteoric Iron and sell it at the ship terminal.",
+      "apiName": "ACH_FIRST_SALE",
+      "globalPercent": 98.1,
+      "hidden": false
     },
     {
-      "id": "rocketeer",
-      "name": "Rocketeer",
+      "id": "heavy-argument",
+      "name": "Heavy argument",
       "category": "Economy & Gear",
-      "description": "Buy the jetpack.",
-      "tip": "Essential mobility upgrade for navigating vertical shafts and flying back to the lander quickly."
+      "description": "Buy the sledgehammer.",
+      "tip": "Buy the Sledgehammer—usually your first tool upgrade.",
+      "apiName": "ACH_HAMMER",
+      "globalPercent": 95.2,
+      "hidden": false
     },
     {
-      "id": "full-toolbox",
-      "name": "Full toolbox",
+      "id": "driller",
+      "name": "Driller",
       "category": "Economy & Gear",
-      "description": "Buy every tool.",
-      "tip": "Unlock all 6 handheld tools: Pickaxe, Sledgehammer, Drill, Laser, Plasma Cutter, and Missile Swarm."
+      "description": "Buy the drill.",
+      "tip": "Buy the Drill.",
+      "apiName": "ACH_DRILL",
+      "globalPercent": 94.3,
+      "hidden": false
     },
     {
       "id": "gun-on-the-roof",
       "name": "Gun on the roof",
       "category": "Economy & Gear",
       "description": "Mount your first gun on the ship.",
-      "tip": "Buy your first automated ship weapon early so your ship chips away at the asteroid while you tunnel."
+      "tip": "Buy your first automated ship weapon early so your ship chips away at the asteroid while you tunnel.",
+      "apiName": "ACH_FIRST_GUN",
+      "globalPercent": 92.1,
+      "hidden": false
+    },
+    {
+      "id": "rocketeer",
+      "name": "Rocketeer",
+      "category": "Economy & Gear",
+      "description": "Buy the jetpack.",
+      "tip": "Essential mobility upgrade for navigating vertical shafts and flying back to the lander quickly.",
+      "apiName": "ACH_JETPACK",
+      "globalPercent": 89.7,
+      "hidden": false
+    },
+    {
+      "id": "employee-of-the-month",
+      "name": "Employee of the month",
+      "category": "Economy & Gear",
+      "description": "Complete 10 orders of the day.",
+      "tip": "Complete 10 daily orders. Check the order of the day each morning and route your digging around it.",
+      "apiName": "ACH_ORDERS_10",
+      "globalPercent": 88.4,
+      "hidden": false
+    },
+    {
+      "id": "little-helper",
+      "name": "Little helper",
+      "category": "Economy & Gear",
+      "description": "Buy your first drone.",
+      "tip": "Buy any drone.",
+      "apiName": "ACH_DRONE",
+      "globalPercent": 87.2,
+      "hidden": false
+    },
+    {
+      "id": "ray-of-hope",
+      "name": "Ray of hope",
+      "category": "Economy & Gear",
+      "description": "Buy the laser.",
+      "tip": "Buy the Laser.",
+      "apiName": "ACH_LASER",
+      "globalPercent": 85.8,
+      "hidden": false
+    },
+    {
+      "id": "six-figures",
+      "name": "Six figures",
+      "category": "Economy & Gear",
+      "description": "Have $100,000 at once.",
+      "tip": "Hold $100,000 in your wallet at the same moment—save up before a big purchase instead of spending every paycheck.",
+      "apiName": "ACH_RICH",
+      "globalPercent": 81.7,
+      "hidden": false
+    },
+    {
+      "id": "fourth-state-of-matter",
+      "name": "Fourth state of matter",
+      "category": "Economy & Gear",
+      "description": "Buy the plasma cutter.",
+      "tip": "Buy the Plasma Cutter.",
+      "apiName": "ACH_PLASMA",
+      "globalPercent": 79.0,
+      "hidden": false
+    },
+    {
+      "id": "mineralogist",
+      "name": "Mineralogist",
+      "category": "Economy & Gear",
+      "description": "Find all eight minerals.",
+      "tip": "The achievement asks for eight minerals, while the game has 11 sellable ores. It isn't confirmed which eight count, so mine every ore type you come across—including deep Neutronium and Dark Matter.",
+      "apiName": "ACH_MINERALS",
+      "globalPercent": 77.6,
+      "hidden": false
+    },
+    {
+      "id": "millionaire",
+      "name": "Millionaire",
+      "category": "Economy & Gear",
+      "description": "Earn $1,000,000 in one game.",
+      "tip": "$1,000,000 earned across a single save (lifetime earnings, not cash on hand).",
+      "apiName": "ACH_EARNED_1M",
+      "globalPercent": 74.9,
+      "hidden": false
+    },
+    {
+      "id": "multimillionaire",
+      "name": "Multimillionaire",
+      "category": "Economy & Gear",
+      "description": "Earn $3,000,000 in one game.",
+      "tip": "$3,000,000 earned in one game. Comes naturally on a full 90-day run once high-value minerals are flowing.",
+      "apiName": "ACH_EARNED_3M",
+      "globalPercent": 65.2,
+      "hidden": false
+    },
+    {
+      "id": "beehive",
+      "name": "Beehive",
+      "category": "Economy & Gear",
+      "description": "Buy the missile swarm.",
+      "tip": "Buy the Missile Swarm, the top handheld tool.",
+      "apiName": "ACH_SWARM",
+      "globalPercent": 65.1,
+      "hidden": false
+    },
+    {
+      "id": "squadron",
+      "name": "Squadron",
+      "category": "Economy & Gear",
+      "description": "Buy all four kinds of drones.",
+      "tip": "Own all four drone types.",
+      "apiName": "ACH_DRONES",
+      "globalPercent": 59.5,
+      "hidden": false
     },
     {
       "id": "armed-to-the-teeth",
       "name": "Armed to the teeth",
       "category": "Economy & Gear",
       "description": "Unlock every ship slot.",
-      "tip": "Unlock all 9 ship weapon slots on the mothership hull to maximize passive excavation."
+      "tip": "Unlock all 6 ship slots—slots 2–6 cost about $869,000 in total.",
+      "apiName": "ACH_SLOTS",
+      "globalPercent": 45.5,
+      "hidden": false
     },
     {
-      "id": "nap-time",
-      "name": "Nap time",
-      "category": "Hazards & Misc",
-      "description": "Black out on the asteroid.",
-      "tip": "Run out of oxygen or fail to reach the lander before departure. Do this on a separate save if chasing 'Wide awake'."
+      "id": "full-toolbox",
+      "name": "Full toolbox",
+      "category": "Economy & Gear",
+      "description": "Buy every tool.",
+      "tip": "Buy all 8 tools: Pickaxe, Sledgehammer, Drill, Laser, Plasma Cutter, Missile Swarm, Lance and Slicer. The last two only appear after you own an Orbital Strike or Collapsar (or hit core metal).",
+      "apiName": "ACH_TOOLS",
+      "globalPercent": 35.3,
+      "hidden": false
     },
     {
-      "id": "coffee-break",
-      "name": "Coffee break",
+      "id": "overtime",
+      "name": "Overtime",
+      "category": "Economy & Gear",
+      "description": "After the ending, take a contract on a new asteroid.",
+      "tip": "Finish a contract, then accept the new-asteroid contract offered after the ending.",
+      "apiName": "ACH_OVERTIME",
+      "globalPercent": 34.2,
+      "hidden": false
+    },
+    {
+      "id": "demolition-expert",
+      "name": "Demolition expert",
+      "category": "Economy & Gear",
+      "description": "Use all five charges from the workshop.",
+      "tip": "Use all five charges available from the workshop. One of the rarer gear achievements (~24%), so don't hoard them.",
+      "apiName": "ACH_CHARGES",
+      "globalPercent": 23.6,
+      "hidden": false
+    },
+    {
+      "id": "on-a-roll",
+      "name": "On a roll",
       "category": "Hazards & Misc",
-      "description": "Have a coffee before a shift.",
-      "tip": "Explore the mothership interior before dropping down to the lander and interact with the coffee station."
+      "description": "Push the combo to ×1.5.",
+      "tip": "Push the mining combo multiplier to ×1.5 by breaking rock continuously without long pauses.",
+      "apiName": "ACH_COMBO",
+      "globalPercent": 99.9,
+      "hidden": false
     },
     {
       "id": "government-property",
       "name": "Government property",
       "category": "Hazards & Misc",
       "description": "Hit a landing pad.",
-      "tip": "Strike the landing pad structure on the asteroid surface with your tool or ship fire."
-    },
-    {
-      "id": "boom",
-      "name": "Boom",
-      "category": "Hazards & Misc",
-      "description": "Smash some antimatter.",
-      "tip": "Deep-core Antimatter pockets detonate on impact—approach carefully or trigger intentionally when clear."
+      "tip": "Strike the landing pad structure on the asteroid surface with your tool or ship fire.",
+      "apiName": "ACH_PAD",
+      "globalPercent": 95.4,
+      "hidden": false
     },
     {
       "id": "gas",
       "name": "Gas!",
       "category": "Hazards & Misc",
       "description": "Breach a gas pocket.",
-      "tip": "Watch for pressurized gas pockets inside deep tunnels; breaching one unlocks this achievement."
+      "tip": "Watch for pressurized gas pockets inside deep tunnels; breaching one unlocks this achievement.",
+      "apiName": "ACH_GAS",
+      "globalPercent": 93.1,
+      "hidden": false
+    },
+    {
+      "id": "on-a-leash",
+      "name": "On a leash",
+      "category": "Hazards & Misc",
+      "description": "Get pulled back to the lander by the tether.",
+      "tip": "Get reeled back to the lander by the safety tether. Nearly 90% of players earn it during normal play.",
+      "apiName": "ACH_TETHER",
+      "globalPercent": 88.3,
+      "hidden": false
+    },
+    {
+      "id": "seen-it-all",
+      "name": "Seen it all",
+      "category": "Hazards & Misc",
+      "description": "Catch a meteor shower, a solar flare and a vein.",
+      "tip": "Witness a meteor shower, a solar flare and a vein event—they arrive over the course of a normal campaign.",
+      "apiName": "ACH_EVENTS",
+      "globalPercent": 83.1,
+      "hidden": false
+    },
+    {
+      "id": "boom",
+      "name": "Boom",
+      "category": "Hazards & Misc",
+      "description": "Smash some antimatter.",
+      "tip": "Deep-core Antimatter pockets detonate on impact—approach carefully or trigger intentionally when clear.",
+      "apiName": "ACH_ANTIMATTER",
+      "globalPercent": 83.0,
+      "hidden": false
+    },
+    {
+      "id": "low-orbit",
+      "name": "Low orbit",
+      "category": "Hazards & Misc",
+      "description": "Stay in the air for 15 seconds straight.",
+      "tip": "Stay airborne for 15 consecutive seconds—easiest with the jetpack in low gravity.",
+      "apiName": "ACH_AIRTIME",
+      "globalPercent": 74.9,
+      "hidden": false
+    },
+    {
+      "id": "nap-time",
+      "name": "Nap time",
+      "category": "Hazards & Misc",
+      "description": "Black out on the asteroid.",
+      "tip": "Run out of oxygen or fail to reach the lander before departure. Do this on a separate save if chasing 'Wide awake'.",
+      "apiName": "ACH_BLACKOUT",
+      "globalPercent": 71.8,
+      "hidden": false
+    },
+    {
+      "id": "rock-rider",
+      "name": "Rock rider",
+      "category": "Hazards & Misc",
+      "description": "Ride a loose piece of rock while it flies.",
+      "tip": "Stand on a chunk of rock that has broken loose and ride it while it drifts.",
+      "apiName": "ACH_RIDE",
+      "globalPercent": 62.8,
+      "hidden": false
+    },
+    {
+      "id": "second-wind",
+      "name": "Second wind",
+      "category": "Hazards & Misc",
+      "description": "Keep going on the emergency ampoule.",
+      "tip": "Keep working on the emergency ampoule rather than heading straight back. Rare (~11%) because most players retreat first—try it close to the lander.",
+      "apiName": "ACH_AMPOULE",
+      "globalPercent": 10.7,
+      "hidden": false
+    },
+    {
+      "id": "coffee-break",
+      "name": "Coffee break",
+      "category": "Ship Life",
+      "description": "Have a coffee before a shift.",
+      "tip": "Explore the mothership interior before dropping down to the lander and interact with the coffee station.",
+      "apiName": "ACH_COFFEE",
+      "globalPercent": 76.8,
+      "hidden": false
+    },
+    {
+      "id": "zero-g",
+      "name": "Zero-g",
+      "category": "Ship Life",
+      "description": "Turn off the ship's gravity.",
+      "tip": "Switch off the ship's gravity.",
+      "apiName": "ACH_GRAVITY",
+      "globalPercent": 55.0,
+      "hidden": false
+    },
+    {
+      "id": "hot-lunch",
+      "name": "Hot lunch",
+      "category": "Ship Life",
+      "description": "Heat up a ration in the microwave.",
+      "tip": "Heat a ration in the microwave.",
+      "apiName": "ACH_MEAL",
+      "globalPercent": 51.4,
+      "hidden": false
+    },
+    {
+      "id": "fresh-off-the-line",
+      "name": "Fresh off the line",
+      "category": "Ship Life",
+      "description": "Wash the lander spotless.",
+      "tip": "Wash the lander until it's completely clean.",
+      "apiName": "ACH_WASH",
+      "globalPercent": 48.0,
+      "hidden": false
+    },
+    {
+      "id": "can-i-drive",
+      "name": "Can I drive?",
+      "category": "Ship Life",
+      "description": "Sit in a pilot's seat.",
+      "tip": "Sit in a pilot's seat.",
+      "apiName": "ACH_PILOT",
+      "globalPercent": 46.5,
+      "hidden": false
+    },
+    {
+      "id": "one-more-game",
+      "name": "One more game",
+      "category": "Ship Life",
+      "description": "Finish a game on the canteen computer.",
+      "tip": "Finish a game on the canteen computer.",
+      "apiName": "ACH_ARCADE",
+      "globalPercent": 35.6,
+      "hidden": false
+    },
+    {
+      "id": "five-dollar-massage",
+      "name": "Five-dollar massage",
+      "category": "Ship Life",
+      "description": "Turn on the massage in the dome chair.",
+      "tip": "Sit in the dome chair and switch on its massage function.",
+      "apiName": "ACH_MASSAGE",
+      "globalPercent": 35.0,
+      "hidden": false
+    },
+    {
+      "id": "bets-are-open",
+      "name": "Bets are open",
+      "category": "Ship Life",
+      "description": "See every place on Earth through the telescope.",
+      "tip": "Use the telescope and look at every place on Earth it can show. Easy to miss (~27%).",
+      "apiName": "ACH_SCOPE",
+      "globalPercent": 27.1,
+      "hidden": false
+    },
+    {
+      "id": "lights-out",
+      "name": "Lights out",
+      "category": "Ship Life",
+      "description": "Sleep in the bed.",
+      "tip": "Sleep in the bed. Only ~20% of players have it—most never try the bed.",
+      "apiName": "ACH_SLEEP",
+      "globalPercent": 20.2,
+      "hidden": false
+    },
+    {
+      "id": "not-in-the-plan",
+      "name": "Not in the plan",
+      "category": "Ship Life",
+      "description": "Start the ship's self-destruct.",
+      "tip": "Hidden achievement: start the ship's self-destruct. Use a spare save slot if you're nervous.",
+      "apiName": "ACH_DESTRUCT",
+      "globalPercent": 8.4,
+      "hidden": true
     }
   ],
   "museumCollections": [

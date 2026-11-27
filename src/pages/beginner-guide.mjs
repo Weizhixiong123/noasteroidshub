@@ -129,20 +129,20 @@ export function renderBeginnerGuidePage(gameData) {
                 <td><strong>Phase 2: Automation ramp</strong></td>
                 <td>Days 16–50</td>
                 <td>Pass 50% (<em>Halfway there</em>), dig toward Star Gold, Space Crystal, and Plasmite</td>
-                <td>Laser then Plasma Cutter (Hit, Tempo, Sweep, Luck), Railgun, Mass Driver, Drones</td>
+                <td>Laser then Plasma Cutter, Railgun or Rockets, Digger and Prospector drones</td>
               </tr>
               <tr>
                 <td><strong>Phase 3: Core and cleanup</strong></td>
                 <td>Days 51–90</td>
                 <td>Reach asteroid center, finish Museum finds, hit 0 m³ (<em>Earth saved</em>)</td>
-                <td>Missile Swarm (Spread and Tunnel modes), Orbital Strike, Collapsar black hole gun</td>
+                <td>Missile Swarm for core metal, Orbital Strike, Lance or Slicer, Collapsar</td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="hero-actions" style="margin-top: 1.25rem; margin-bottom: 0;">
           <a class="btn btn-primary" href="/upgrades-weapons/">See full tools and ship weapons</a>
-          <a class="btn btn-secondary" href="/ores-economy/">View all 10 ores and layers</a>
+          <a class="btn btn-secondary" href="/ores-economy/">View all 11 ores and prices</a>
         </div>
       </div>
     </section>

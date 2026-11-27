@@ -1,64 +1,144 @@
 import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml } from "../templates/layout.mjs";
 
+const fmt = (n, digits = 2) => (Number.isInteger(n) ? String(n) : n.toFixed(digits));
+
 export function renderUpgradesWeaponsPage(gameData) {
-  const title = "No Asteroids Tools, Ship Weapons & Best Upgrade Order Guide";
-  const description =
-    "Complete progression guide for all 6 handheld tools (Pickaxe to Missile Swarm), automated ship weapons including the Collapsar black hole gun, and utility drones.";
+  const tools = gameData.handheldTools;
+  const guns = gameData.shipWeapons;
+  const slots = gameData.shipSlots;
+  const src = gameData.meta.dataSources;
+
+  const title = `No Asteroids Tools & Ship Guns: All ${tools.length} Tools, ${guns.length} Guns, Prices & Best Picks`;
+  const description = `Every No Asteroids tool (Pickaxe to Lance and Slicer) and all ${guns.length} ship guns with prices, damage, radius and fire rate, plus Lance vs Slicer, best ship guns, slots, drones and charges.`;
 
   const crumbs = [
     { name: "Home", href: "/" },
     { name: "Tools & Weapons", href: "/upgrades-weapons/" }
   ];
 
-  const schemas = [breadcrumbSchema(crumbs)];
+  const gunStats = guns.map((g) => {
+    const dps = g.damage * g.shotsPerSecond;
+    return { ...g, dps, dpsPer10k: (dps / g.priceValue) * 10000 };
+  });
+  const byDps = [...gunStats].sort((a, b) => b.dps - a.dps);
+  const byValue = [...gunStats].sort((a, b) => b.dpsPer10k - a.dpsPer10k);
+  const byRadius = [...gunStats].sort((a, b) => b.radius - a.radius);
 
-  const toolRows = gameData.handheldTools
-    .map((t) => {
-      const extras = [
-        ...(t.branches ? t.branches.map((b) => `<span class="badge badge-yellow">${escapeHtml(b)}</span>`) : []),
-        ...(t.modes ? t.modes.map((m) => `<span class="badge badge-yellow">${escapeHtml(m)}</span>`) : [])
-      ].join(" ");
-      return `
-      <tr data-filter-item data-filter-cat="handheld" data-filter-text="${escapeHtml(`${t.name} ${t.role} ${t.notes} ${(t.branches || []).join(" ")} ${(t.modes || []).join(" ")}`)}">
-        <td><strong>Tier ${t.tier}: ${escapeHtml(t.name)}</strong><br><span class="badge">${escapeHtml(t.role)}</span></td>
-        <td><span class="badge badge-tbd">${escapeHtml(t.unlockCost)}</span></td>
-        <td>${extras || '<span class="badge">Standard progression</span>'}</td>
-        <td>${escapeHtml(t.notes)}</td>
-      </tr>`;
-    })
-    .join("");
+  const faqs = [
+    {
+      q: "Should I buy the Lance or the Slicer first in No Asteroids?",
+      a: "Both cost $1,200,000 and both break strange matter. The Lance bores a tunnel, so it is the pick for reaching the center fast; the Slicer cuts a flat sheet, so it clears wide areas. Since update 1.0.6 the Slicer cuts three times as often and the Lance no longer pushes you back. If you only want to reach the strange-matter heart, take the Lance; for bulk volume, take the Slicer."
+    },
+    {
+      q: "How do I unlock the Lance and Slicer?",
+      a: "They only appear in the Workshop after you own an Orbital Strike or a Collapsar (in a ship slot or storage), or after you hit core metal with a mining tool in the current Year. Once owned in a Year they stay on sale."
+    },
+    {
+      q: "What are the best ship guns in No Asteroids?",
+      a: `By raw damage per second the ${byDps[0].name} leads; for damage per dollar the ${byValue[0].name} and ${byValue[1].name} are the best early buys. The Orbital Strike has the largest blast radius (${byRadius[0].radius} m) and, with the Collapsar, is the only gun that breaks strange matter.`
+    },
+    {
+      q: "How many ship slots are there?",
+      a: `${slots.total}. The first is free; slots 2–${slots.total} cost about ${slots.totalCost} in total. Unlocking every slot earns Armed to the teeth.`
+    }
+  ];
 
-  const shipRows = gameData.shipWeapons
+  const schemas = [
+    breadcrumbSchema(crumbs),
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } }))
+    }
+  ];
+
+  const toolRows = tools
     .map(
-      (w) => `
-      <tr data-filter-item data-filter-cat="ship" data-filter-text="${escapeHtml(`${w.name} ${w.stage} ${w.role} ${w.notes}`)}">
-        <td><strong>${escapeHtml(w.name)}</strong><br><span class="badge badge-yellow">${escapeHtml(w.stage)}</span></td>
-        <td><span class="badge badge-tbd">${escapeHtml(w.cost)}</span></td>
-        <td>${escapeHtml(w.role)}</td>
-        <td>${escapeHtml(w.notes)}</td>
+      (t, i) => `
+      <tr data-filter-item data-filter-cat="handheld" data-filter-text="${escapeHtml(`${t.name} ${t.breaks} ${t.unlock} ${t.notes}`)}">
+        <td><strong>${i + 1}. ${escapeHtml(t.name)}</strong></td>
+        <td>${escapeHtml(t.price)}</td>
+        <td>${escapeHtml(t.priceCrew2)} / ${escapeHtml(t.priceCrew3)}</td>
+        <td>${escapeHtml(t.breaks)}</td>
+        <td>${escapeHtml(t.notes)}${t.unlock !== "Workshop" && t.unlock !== "Starter" ? `<br><span class="badge badge-yellow">Unlock</span> ${escapeHtml(t.unlock)}` : ""}</td>
       </tr>`
     )
     .join("");
 
-  const utilRows = gameData.utilitiesAndDrones
+  const gunRows = gunStats
+    .map(
+      (g) => `
+      <tr data-filter-item data-filter-cat="ship" data-filter-text="${escapeHtml(`${g.name} ${g.notes}`)}">
+        <td><strong>${escapeHtml(g.name)}</strong></td>
+        <td>${escapeHtml(g.price)}</td>
+        <td>${escapeHtml(fmt(g.damage))}</td>
+        <td>${escapeHtml(fmt(g.radius, 1))} m</td>
+        <td>${escapeHtml(g.rate)}</td>
+        <td>${escapeHtml(g.dps.toFixed(2))}</td>
+        <td>${escapeHtml(g.notes)}</td>
+      </tr>`
+    )
+    .join("");
+
+  const droneRows = gameData.drones
+    .map(
+      (d) => `
+      <tr data-filter-item data-filter-cat="utility" data-filter-text="${escapeHtml(`${d.name} drone ${d.notes}`)}">
+        <td><strong>${escapeHtml(d.name)}</strong> <span class="badge">Drone</span></td>
+        <td>${escapeHtml(d.price)}</td>
+        <td>Day ${d.fromDay}</td>
+        <td>${escapeHtml(d.notes)}</td>
+      </tr>`
+    )
+    .join("");
+
+  const utilRows = gameData.utilities
     .map(
       (u) => `
-      <tr data-filter-item data-filter-cat="utility" data-filter-text="${escapeHtml(`${u.name} ${u.unlock} ${u.notes}`)}">
-        <td><strong>${escapeHtml(u.name)}</strong></td>
-        <td><span class="badge">${escapeHtml(u.unlock)}</span></td>
+      <tr data-filter-item data-filter-cat="utility" data-filter-text="${escapeHtml(`${u.name} ${u.notes}`)}">
+        <td><strong>${u.href ? `<a href="${escapeHtml(u.href)}">${escapeHtml(u.name)}</a>` : escapeHtml(u.name)}</strong> <span class="badge">System</span></td>
+        <td>${escapeHtml(u.price)}</td>
+        <td>—</td>
         <td>${escapeHtml(u.notes)}</td>
       </tr>`
     )
     .join("");
 
+  const chargeRows = gameData.charges
+    .map(
+      (c) => `
+      <tr>
+        <td><strong>${escapeHtml(c.name)}</strong></td>
+        <td>${escapeHtml(c.price)}</td>
+        <td>${c.perPurchase}</td>
+        <td>${c.maxCarried}</td>
+        <td>Day ${c.fromDay}</td>
+      </tr>`
+    )
+    .join("");
+
+  const upgradeRows = gameData.gunUpgrades
+    .map(
+      (u) => `
+      <tr>
+        <td><strong>${escapeHtml(u.name)}</strong></td>
+        <td>${escapeHtml(u.firstLevel)}</td>
+        <td>${u.levels}</td>
+        <td>${escapeHtml(u.effect)}</td>
+      </tr>`
+    )
+    .join("");
+
+  const slotList = slots.prices.map((p, i) => `<li>Slot ${i + 1}: <strong>${escapeHtml(p)}</strong></li>`).join("");
+
   const content = `
     <section class="page-header">
       <div class="container">
         ${renderBreadcrumbs(crumbs)}
-        <h1>No Asteroids tools, ship weapons, and upgrade order</h1>
+        <h1>No Asteroids tools, ship guns, and upgrade prices</h1>
         <p class="lead">
-          Your handheld gear cuts deep mineral veins while ship-mounted ordnance blasts the 5,000,000 m³ exterior.
-          Filter the catalog below to plan upgrades from the starter Pickaxe up to the <strong>Collapsar</strong> black hole weapon.
+          All ${tools.length} handheld tools, all ${guns.length} ship guns, the ${slots.total} ship slots, drones, charges and gun upgrades—with prices and stats in one place.
+          Jump to <a href="#lance-vs-slicer">Lance vs Slicer</a> or <a href="#best-ship-guns">best ship guns</a>.
         </p>
       </div>
     </section>
@@ -68,28 +148,28 @@ export function renderUpgradesWeaponsPage(gameData) {
         <div class="toolbar">
           <div class="pill-group" role="group" aria-label="Filter equipment category">
             <button class="pill-btn active" type="button" data-filter-btn="all">All gear</button>
-            <button class="pill-btn" type="button" data-filter-btn="handheld">Handheld tools (6)</button>
-            <button class="pill-btn" type="button" data-filter-btn="ship">Ship weapons (9 slots)</button>
-            <button class="pill-btn" type="button" data-filter-btn="utility">Utilities and drones</button>
+            <button class="pill-btn" type="button" data-filter-btn="handheld">Tools (${tools.length})</button>
+            <button class="pill-btn" type="button" data-filter-btn="ship">Ship guns (${guns.length})</button>
+            <button class="pill-btn" type="button" data-filter-btn="utility">Drones and systems</button>
           </div>
-          <input class="search-input" type="search" placeholder="Search tool, Collapsar, Plasma..." aria-label="Search tools and weapons" data-filter-search>
+          <input class="search-input" type="search" placeholder="Search Lance, Collapsar, drone..." aria-label="Search tools and weapons" data-filter-search>
         </div>
 
         <div class="callout yellow">
-          <strong>Stat transparency:</strong> Tool names, Plasma Cutter upgrade branches (<em>Hit, Tempo, Sweep, Luck</em>), Missile Swarm tactical modes,
-          and ship ordnance roles are verified from release builds. Exact credit prices and DPS values vary by patch and stay marked
-          <span class="badge badge-tbd">TBD (Verifying)</span> until full post-launch terminal tables are confirmed.
+          <strong>Data sources:</strong> ${escapeHtml(src.note)} Checked ${escapeHtml(src.checked)} against game version ${escapeHtml(src.gameVersion)}.
         </div>
 
-        <h2 style="margin-top: 1.75rem;">1. Handheld mining tools (6 tiers for Full toolbox)</h2>
+        <h2 style="margin-top: 1.75rem;">1. Handheld tools (all ${tools.length} for Full toolbox)</h2>
+        <p class="section-sub">Laser, Plasma Cutter and Missile Swarm cost more in co-op unless the host turns on <em>Separate gear</em>, in which case everyone pays the solo price.</p>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>Tool and role</th>
-                <th>Credit cost</th>
-                <th>Branches or modes</th>
-                <th>Tactical notes</th>
+                <th>Tool</th>
+                <th>Solo price</th>
+                <th>Crew of 2 / 3+</th>
+                <th>Breaks</th>
+                <th>Notes</th>
               </tr>
             </thead>
             <tbody>
@@ -98,34 +178,40 @@ export function renderUpgradesWeaponsPage(gameData) {
           </table>
         </div>
 
-        <h2 style="margin-top: 2rem;">2. Automated ship weapons (9 hull slots for Armed to the teeth)</h2>
+        <h2 style="margin-top: 2rem;">2. Ship guns (all ${guns.length})</h2>
+        <p class="section-sub">Guns go on sale on Day 15 in Year 1 (Day 1 from Year 2). In The Hard Way, every gun except the Orbital Strike costs 1.5×. DPS = damage × shots per second, computed from the listed stats.</p>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>Ship weapon and stage</th>
-                <th>Slot cost</th>
-                <th>Primary role</th>
-                <th>How it helps your run</th>
+                <th>Gun</th>
+                <th>Price</th>
+                <th>Damage</th>
+                <th>Radius</th>
+                <th>Fire rate</th>
+                <th>DPS</th>
+                <th>Notes</th>
               </tr>
             </thead>
             <tbody>
-              ${shipRows}
+              ${gunRows}
             </tbody>
           </table>
         </div>
 
-        <h2 style="margin-top: 2rem;">3. Suit utilities, drones, and crew roles</h2>
+        <h2 style="margin-top: 2rem;">3. Drones and ship systems</h2>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>System or upgrade</th>
-                <th>Source</th>
-                <th>Why it matters</th>
+                <th>Item</th>
+                <th>Price</th>
+                <th>On sale</th>
+                <th>What it does</th>
               </tr>
             </thead>
             <tbody>
+              ${droneRows}
               ${utilRows}
             </tbody>
           </table>
@@ -135,31 +221,129 @@ export function renderUpgradesWeaponsPage(gameData) {
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="lance-vs-slicer">
       <div class="container">
-        <h2>Recommended upgrade order (solo vs. co-op)</h2>
+        <h2>Lance vs Slicer: which to buy first</h2>
         <div class="grid grid-2">
           <div class="panel">
-            <span class="badge badge-yellow">Solo campaign order</span>
-            <h3>Balance personal digging and roof firepower</h3>
+            <span class="badge badge-yellow">Lance · $1,200,000</span>
+            <h3>Bores a tunnel</h3>
+            <ul class="clean-list">
+              <li>Best for driving straight to the center and the strange-matter heart.</li>
+              <li>Charged fire mode; since 1.0.6 it no longer pushes you back.</li>
+              <li>Pick it if your goal is <em>Straight to the heart</em> or cracking strange matter quickly.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <span class="badge badge-yellow">Slicer · $1,200,000</span>
+            <h3>Cuts a flat sheet</h3>
+            <ul class="clean-list">
+              <li>Clears wide areas; better for raw volume late in a run.</li>
+              <li>Since 1.0.6 it cuts three times as often.</li>
+              <li>Pick it if you need m³ per minute more than depth.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="callout" style="margin-top: 1rem;"><strong>Unlock:</strong> both appear only after you own an Orbital Strike or Collapsar, or after hitting core metal with a mining tool in the current Year. Neither has published damage numbers yet.</p>
+      </div>
+    </section>
+
+    <section class="section" id="best-ship-guns">
+      <div class="container">
+        <h2>Best ship guns in No Asteroids</h2>
+        <p class="section-sub">Rankings use the listed stats only. Real removal also depends on blast radius and gun upgrades, so treat this as a starting point.</p>
+        <div class="grid grid-3">
+          <div class="panel">
+            <span class="badge badge-safe">Best value early</span>
+            <h3>Damage per second per $10k</h3>
             <ol class="clean-list">
-              <li><strong>Oxygen and Cargo Lv. 1–2</strong> to cut wasted shuttle returns.</li>
-              <li><strong>Sledgehammer then Drill</strong> alongside your <strong>first ship turret</strong> (<em>Gun on the roof</em>).</li>
-              <li><strong>Jetpack</strong> (<em>Rocketeer</em>) before deep vertical shafts slow down exits.</li>
-              <li><strong>Plasma Cutter</strong> (prioritize <em>Hit</em> and <em>Tempo</em>, then <em>Sweep</em>) plus mid-tier Railgun and Mass Driver.</li>
-              <li><strong>Missile Swarm</strong> (<em>Tunnel Mode</em> for core; <em>Spread Fire</em> for crust) and <strong>Collapsar</strong> to sweep the final 10–25%.</li>
+              ${byValue.slice(0, 3).map((g) => `<li><strong>${escapeHtml(g.name)}</strong> — ${g.dpsPer10k.toFixed(1)} (${escapeHtml(g.price)})</li>`).join("")}
             </ol>
           </div>
           <div class="panel">
-            <span class="badge badge-yellow">8-player co-op order</span>
-            <h3>Coordinate shared wallet spending</h3>
+            <span class="badge badge-yellow">Highest raw DPS</span>
+            <h3>Damage per second</h3>
             <ol class="clean-list">
-              <li>Keep host spending permissions clear so shared ore credits don't get wasted on duplicate low-tier tools.</li>
-              <li>If loadouts are toggled to <strong>Shared</strong>, each tier unlock upgrades the whole crew at once.</li>
-              <li>Send deep-vein hunters after Star Gold and Plasmite while surface players run Tractor Beams and hull weapon slots.</li>
-              <li>Check daily team requirements in the <a href="/calculator/">90-day pace calculator</a>—if output lags, funnel funds into Ship Slots and Collapsar.</li>
+              ${byDps.slice(0, 3).map((g) => `<li><strong>${escapeHtml(g.name)}</strong> — ${g.dps.toFixed(2)}</li>`).join("")}
             </ol>
           </div>
+          <div class="panel">
+            <span class="badge badge-impact">Biggest blasts</span>
+            <h3>Blast radius</h3>
+            <ol class="clean-list">
+              ${byRadius.slice(0, 3).map((g) => `<li><strong>${escapeHtml(g.name)}</strong> — ${fmt(g.radius, 1)} m</li>`).join("")}
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2">
+          <div>
+            <h2>Ship slots (${slots.total})</h2>
+            <ul class="clean-list">${slotList}</ul>
+            <p class="section-sub">Total for slots 2–${slots.total}: ${escapeHtml(slots.totalCost)}. ${escapeHtml(slots.note)}</p>
+          </div>
+          <div>
+            <h2>Gun upgrades (Engineering)</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Upgrade</th><th>Level 1</th><th>Levels</th><th>Effect</th></tr></thead>
+                <tbody>${upgradeRows}</tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Charges and workshop gear</h2>
+        <p class="section-sub">Using all five charge types earns <a href="/achievements-endings/">Demolition expert</a>. Charge upgrades: Blast radius (10 levels, from $2,000, +15% radius each) and Stock (3 levels, from $4,000). No charge breaks strange matter.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Item</th><th>Price</th><th>Per purchase</th><th>Max carried</th><th>On sale</th></tr></thead>
+            <tbody>${chargeRows}</tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Recommended buy order</h2>
+        <div class="grid grid-2">
+          <div class="panel">
+            <span class="badge badge-yellow">Solo</span>
+            <ol class="clean-list">
+              <li><strong>Sledgehammer ($500) → Drill ($2,000)</strong> in the first days.</li>
+              <li>From Day 15: a <strong>Turret</strong> or <strong>Autocannon</strong> plus the <strong>Tractor Beam</strong> so ship-gun ore isn't lost.</li>
+              <li><strong>Laser ($42,000)</strong> once basalt blocks your veins; add the Digger and Prospector drones.</li>
+              <li><strong>Plasma Cutter</strong>, more ship slots and Firepower / Rate of fire upgrades.</li>
+              <li><strong>Missile Swarm</strong> for core metal, then <strong>Orbital Strike</strong> → <strong>Lance or Slicer</strong>.</li>
+            </ol>
+          </div>
+          <div class="panel">
+            <span class="badge badge-yellow">Co-op</span>
+            <ol class="clean-list">
+              <li>Decide on <em>Separate gear</em> first—it changes what the Laser, Plasma Cutter and Missile Swarm cost.</li>
+              <li>Ship guns and slots are shared value: prioritise them over duplicate tools.</li>
+              <li>Send one player for deep Neutronium, Dark Matter and Antimatter while others keep the guns fed.</li>
+              <li>Check the <a href="/calculator/">90-day pace calculator</a>—if you're behind, put money into guns and slots.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Tools and guns FAQ</h2>
+        <div class="grid grid-2">
+          ${faqs.map((f) => `<article class="faq-item"><h3>${escapeHtml(f.q)}</h3><p>${escapeHtml(f.a)}</p></article>`).join("\n          ")}
         </div>
       </div>
     </section>

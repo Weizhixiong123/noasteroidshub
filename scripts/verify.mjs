@@ -13,6 +13,8 @@ const EXPECTED_FILES = [
   "achievements-endings/index.html",
   "calculator/index.html",
   "faq-coop/index.html",
+  "repair-station/index.html",
+  "strange-matter/index.html",
   "404.html",
   "sitemap.xml",
   "robots.txt",
@@ -27,6 +29,7 @@ const EXPECTED_FILES = [
 ];
 
 const HTML_FILES = EXPECTED_FILES.filter((f) => f.endsWith(".html"));
+const EXPECTED_SITEMAP_URLS = HTML_FILES.length - 1; // every page except 404.html
 
 async function exists(filePath) {
   try {
@@ -110,8 +113,8 @@ async function verify() {
   if (await exists(sitemapPath)) {
     const sitemap = await readFile(sitemapPath, "utf8");
     const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/gi)].map((m) => m[1].trim());
-    if (locs.length !== 7) {
-      errors.push(`sitemap.xml: expected 7 <loc> entries, found ${locs.length}`);
+    if (locs.length !== EXPECTED_SITEMAP_URLS) {
+      errors.push(`sitemap.xml: expected ${EXPECTED_SITEMAP_URLS} <loc> entries, found ${locs.length}`);
     }
     for (const loc of locs) {
       let pathname = "/";
@@ -135,7 +138,7 @@ async function verify() {
     process.exit(1);
   }
 
-  console.log(`Verification passed: ${EXPECTED_FILES.length} artifacts, ${HTML_FILES.length} HTML pages, valid JSON-LD, zero broken internal links, 7/7 sitemap URLs verified.`);
+  console.log(`Verification passed: ${EXPECTED_FILES.length} artifacts, ${HTML_FILES.length} HTML pages, valid JSON-LD, zero broken internal links, ${EXPECTED_SITEMAP_URLS}/${EXPECTED_SITEMAP_URLS} sitemap URLs verified.`);
 }
 
 verify().catch((err) => {
