@@ -66,7 +66,7 @@ export function renderBeginnerGuidePage(gameData) {
           </div>
           <div class="panel">
             <h3>2. Drop and dig the surface</h3>
-            <p>Ride the lander down and work the surface first: every ore up to Plasmite breaks with any tool, so sell early and put the first $500 into the Sledgehammer.</p>
+            <p>Ride the lander down and work the surface first. The scanner shows ore through rock, and every ore up to Plasmite breaks with any tool—sell early and put the first $500 into the Sledgehammer.</p>
           </div>
           <div class="panel">
             <h3>3. Extract before oxygen runs out</h3>

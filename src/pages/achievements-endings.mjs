@@ -67,7 +67,7 @@ export function renderAchievementsPage(achievementsData) {
   const itemsHtml = list
     .map(
       (a) => `
-      <label class="ach-item" data-ach-item data-ach-id="${escapeHtml(a.id)}" data-ach-cat="${escapeHtml(a.category)}" data-ach-text="${escapeHtml(`${a.name} ${a.category} ${a.description} ${a.tip}`)}">
+      <label class="ach-item" id="ach-${escapeHtml(a.id)}" data-ach-item data-ach-id="${escapeHtml(a.id)}" data-ach-cat="${escapeHtml(a.category)}" data-ach-text="${escapeHtml(`${a.name} ${a.category} ${a.description} ${a.tip}`)}">
         <input type="checkbox" aria-label="Mark ${escapeHtml(a.name)} complete">
         <div>
           <div class="ach-title-row">

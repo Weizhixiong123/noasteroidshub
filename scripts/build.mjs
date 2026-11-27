@@ -11,6 +11,7 @@ import { renderCalculatorPage } from "../src/pages/calculator.mjs";
 import { renderFaqCoopPage } from "../src/pages/faq-coop.mjs";
 import { renderRepairStationPage } from "../src/pages/repair-station.mjs";
 import { renderStrangeMatterPage } from "../src/pages/strange-matter.mjs";
+import { renderPatchNotesPage } from "../src/pages/patch-notes.mjs";
 import { renderNotFoundPage } from "../src/pages/not-found.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -27,10 +28,11 @@ async function loadJson(filename) {
 async function build() {
   const start = performance.now();
 
-  const [gameData, achievementsData, faqList] = await Promise.all([
+  const [gameData, achievementsData, faqList, patchData] = await Promise.all([
     loadJson("game-data.json"),
     loadJson("achievements.json"),
-    loadJson("faq.json")
+    loadJson("faq.json"),
+    loadJson("patch-notes.json")
   ]);
 
   await rm(DIST_DIR, { recursive: true, force: true });
@@ -94,6 +96,13 @@ async function build() {
       priority: "0.8",
       changefreq: "weekly",
       html: renderStrangeMatterPage(gameData)
+    },
+    {
+      route: "/patch-notes/",
+      file: "patch-notes/index.html",
+      priority: "0.8",
+      changefreq: "daily",
+      html: renderPatchNotesPage(patchData)
     }
   ];
 

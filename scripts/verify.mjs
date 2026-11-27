@@ -15,6 +15,7 @@ const EXPECTED_FILES = [
   "faq-coop/index.html",
   "repair-station/index.html",
   "strange-matter/index.html",
+  "patch-notes/index.html",
   "404.html",
   "sitemap.xml",
   "robots.txt",

@@ -34,6 +34,10 @@ export function renderRepairStationPage(gameData) {
       a: "Each of the five ship sections gives a small permanent bonus once certified (+3% to +5%), plus a little cash per spot and section restored. The gun bonuses (Bridge and Engine room) help most on a full 90-day run; it is less urgent than ship guns early on."
     },
     {
+      q: "What is the Spring Cleaning achievement?",
+      a: "The November 25 patch notes say cleaning was fixed and the Spring Cleaning achievement made easier to unlock. No achievement by that name is in the current Steam list—the closest is Fresh off the line (wash the lander spotless)—so it may have been renamed."
+    },
+    {
       q: "How do I get the Fresh off the line achievement?",
       a: "Fresh off the line asks you to wash the lander spotless. That uses the free starting sprayer—you do not need the Repair Station for it."
     }
@@ -103,7 +107,7 @@ export function renderRepairStationPage(gameData) {
           </table>
         </div>
         <p class="callout yellow" style="margin-top: 1rem;">
-          <strong>Not settled yet:</strong> community sources disagree on whether section rewards pay once per campaign (reported after update 1.0.2) or once every Year with rising amounts. We'll update this when it's confirmed in-game.
+          <strong>Once per campaign:</strong> update 1.0.2 set cleaning pay at $5 per restored damage spot and $100 per finished room, paid once per campaign. Cleaned surfaces stay clean for 35 days before dust starts to return. See the <a href="/patch-notes/#v1-0-2">1.0.2 patch notes</a>.
         </p>
       </div>
     </section>

@@ -1,0 +1,276 @@
+{
+  "source": "Official Unruled Games announcements on Steam (ISteamNews)",
+  "checked": "2026-11-27",
+  "entries": [
+    {
+      "title": "Update 1.0.8 — Smoother Mining & Co-op Fixes",
+      "version": "1.0.8",
+      "date": "2026-11-26",
+      "kind": "patch",
+      "url": "https://store.steampowered.com/news/app/5527800/view/1850460852987492",
+      "highlights": [
+        "Less stuttering while mining, flying and aboard the ship; lower video memory use.",
+        "The jetpack now recharges in mid-air.",
+        "The Compactor now also applies to the ship's hold, and one more cargo upgrade is available.",
+        "No Rush mode gets a No blackouts option.",
+        "Teammate markers are always visible in co-op; darts can be played together.",
+        "Fixes for co-op black screens, premature victory, unreachable final fragments and first-aid kits being used too early."
+      ],
+      "related": [
+        [
+          "/upgrades-weapons/",
+          "Compactor and cargo upgrades"
+        ],
+        [
+          "/faq-coop/",
+          "Co-op FAQ"
+        ]
+      ]
+    },
+    {
+      "title": "Update 1.0.7 — Co-op & Performance Improvements",
+      "version": "1.0.7",
+      "date": "2026-11-26",
+      "kind": "patch",
+      "url": "https://store.steampowered.com/news/app/5527800/view/1850460852985405",
+      "highlights": [
+        "Lance and Slicer respond better for co-op guests.",
+        "Shorter co-op delays and better session recovery after updating.",
+        "Better frame pacing; default frame limit raised to 120 FPS.",
+        "Rebindable roll controls while airborne.",
+        "Daily orders no longer ask for minerals you can't get."
+      ],
+      "related": [
+        [
+          "/upgrades-weapons/#lance-vs-slicer",
+          "Lance vs Slicer"
+        ]
+      ]
+    },
+    {
+      "title": "Update 1.0.6 — Improvements & Co-op Fixes",
+      "version": "1.0.6",
+      "date": "2026-11-25",
+      "kind": "patch",
+      "url": "https://store.steampowered.com/news/app/5527800/view/1850460852982993",
+      "highlights": [
+        "Mining contribution statistics in Engineering.",
+        "Two more cargo upgrades; ship modules can now be sold.",
+        "New Game+ is available more widely, with bigger rewards in later years.",
+        "Days no longer advance automatically in No Rush or after an ending.",
+        "Fixes for severe co-op slowdowns and guest achievements."
+      ],
+      "related": [
+        [
+          "/achievements-endings/",
+          "Achievements"
+        ]
+      ]
+    },
+    {
+      "title": "New Game+ Bonuses, Mining & Co-op Improvements",
+      "version": null,
+      "date": "2026-11-25",
+      "kind": "patch",
+      "url": "https://store.steampowered.com/news/app/5527800/view/1850460852982479",
+      "highlights": [
+        "New Game+: pick two of three permanent bonuses when starting the next year.",
+        "The Slicer cuts three times as often; the Lance no longer pushes you backward.",
+        "Selling the Lance or Slicer no longer re-locks it in the Workshop.",
+        "Fixed unreachable repair spots; cleaning now works on the lowest graphics setting.",
+        "Completed asteroid shapes are marked on the sector map."
+      ],
+      "related": [
+        [
+          "/upgrades-weapons/#lance-vs-slicer",
+          "Lance vs Slicer"
+        ],
+        [
+          "/repair-station/",
+          "Repair Station"
+        ]
+      ]
+    },
+    {
+      "title": "Gear, Progression & Co-op Improvements",
+      "version": null,
+      "date": "2026-11-25",
+      "kind": "patch",
+      "url": "https://store.steampowered.com/news/app/5527800/view/1850460852981056",
+      "highlights": [
+        "Hand tools can be sold back at the Workshop; save slots can be copied.",
+        "Upgraded boots can anchor you to the asteroid; late jetpack upgrades fly much longer.",
+        "Mineral prices recover faster overnight and big sales lose less.",
+        "Strange Matter: a new asteroid heart in new campaigns and new years.",
+        "Ore collected by ship guns now counts toward daily delivery objectives."
+      ],
+      "related": [
+        [
+          "/strange-matter/",
+          "Strange Matter guide"
+        ],
+        [
+          "/ores-economy/",
+          "Ore prices"
+        ]
+      ]
+    },
+    {
+      "title": "Balance & Progression — Fixes and Improvements",
+      "version": null,
+      "date": "2026-11-25",
+      "kind": "patch",
+      "url": "https://store.steampowered.com/news/app/5527800/view/1850460852980504",
+      "highlights": [
+        "Ship weapons strengthened and upgrade progression improved.",
+        "Core mining restrictions and Neutronium market prices adjusted.",
+        "Ship weapon objectives added to daily objectives.",
+        "The Spring Cleaning achievement is easier to unlock."
+      ],
+      "related": [
+        [
+          "/upgrades-weapons/#best-ship-guns",
+          "Best ship guns"
+        ],
+        [
+          "/repair-station/",
+          "Repair Station"
+        ]
+      ]
+    },
+    {
+      "title": "Update 1.0.2 — Rock Sales, a Stronger Lance & Fixes",
+      "version": "1.0.2",
+      "date": "2026-11-25",
+      "kind": "patch",
+      "url": "https://store.steampowered.com/news/app/5527800/view/1850460852979281",
+      "highlights": [
+        "From day 35, ordinary rock fills spare cargo and sells for $2 per unit.",
+        "Stronger Lance: more mining power, faster charge; right-click switches charged and continuous fire.",
+        "The Lance and Slicer now unlock after buying an Orbital Strike or Collapsar.",
+        "Scanner: pick a colour per mineral or hide minerals you don't want.",
+        "Ship cleaning pays $5 per restored spot and $100 per finished room, once per campaign."
+      ],
+      "related": [
+        [
+          "/upgrades-weapons/#lance-vs-slicer",
+          "Lance vs Slicer"
+        ],
+        [
+          "/repair-station/",
+          "Repair Station"
+        ],
+        [
+          "/ores-economy/",
+          "Rock and ore prices"
+        ]
+      ]
+    },
+    {
+      "title": "Co-op Chat & Fixes",
+      "version": null,
+      "date": "2026-11-24",
+      "kind": "patch",
+      "url": "https://store.steampowered.com/news/app/5527800/view/1849827110447955",
+      "highlights": [
+        "Co-op text chat on T (rebindable).",
+        "Resolution selector and an option to hide the ore health bar.",
+        "Empty landers return sooner; daily orders account for what's left in the asteroid."
+      ],
+      "related": [
+        [
+          "/faq-coop/",
+          "Co-op FAQ"
+        ]
+      ]
+    },
+    {
+      "title": "No Asteroids is out now!",
+      "version": null,
+      "date": "2026-11-24",
+      "kind": "release",
+      "url": "https://store.steampowered.com/news/app/5527800/view/1849827110447290",
+      "highlights": [
+        "Full release on Windows and macOS, solo or with up to seven friends.",
+        "20% launch discount until December 8."
+      ],
+      "related": [
+        [
+          "/beginner-guide/",
+          "Beginner guide"
+        ]
+      ]
+    },
+    {
+      "title": "Personal Co-op Gear, Shaker Charges & Fixes",
+      "version": null,
+      "date": "2026-11-22",
+      "kind": "pre-release",
+      "url": "https://store.steampowered.com/news/app/5527800/view/1849827110438849",
+      "highlights": [
+        "Hosts choose shared or personal co-op gear; crew money stays shared. With personal gear, the Laser, Plasma Cutter and Missile Swarm cost the solo price.",
+        "Five save slots.",
+        "Shaker charges reworked to shake ore loose and pull it toward you."
+      ],
+      "related": [
+        [
+          "/upgrades-weapons/",
+          "Tool prices"
+        ]
+      ]
+    },
+    {
+      "title": "Stronger Drones, Tunnel Mode & Co-op Fixes",
+      "version": null,
+      "date": "2026-11-21",
+      "kind": "pre-release",
+      "url": "https://store.steampowered.com/news/app/5527800/view/1849827110436541",
+      "highlights": [
+        "Missile Swarm Tunnel Mode: right-click to switch between spread fire and a focused, deeper salvo.",
+        "Carry 12 standard charges by default, up to 24 with upgrades.",
+        "Hard mode: about 25% less ore, 90% ore income and 50% pricier ship guns.",
+        "Co-op: ore pays 90% after multiplayer shifts; Laser, Plasma Cutter and Missile Swarm cost +50% for two players and +100% for three or more."
+      ],
+      "related": [
+        [
+          "/upgrades-weapons/",
+          "Tools and guns"
+        ]
+      ]
+    },
+    {
+      "title": "Save Slots, Hard Mode & Co-op Improvements",
+      "version": null,
+      "date": "2026-11-20",
+      "kind": "pre-release",
+      "url": "https://store.steampowered.com/news/app/5527800/view/1849827110431994",
+      "highlights": [
+        "New difficulty: The hard way. By the contract is the recommended mode.",
+        "Show teammates' names and outlines through rock (middle mouse by default).",
+        "Antimatter base price raised from $56 to $150."
+      ],
+      "related": [
+        [
+          "/ores-economy/",
+          "Ore prices"
+        ]
+      ]
+    },
+    {
+      "title": "The No Asteroids demo is out now",
+      "version": null,
+      "date": "2026-11-10",
+      "kind": "demo",
+      "url": "https://store.steampowered.com/news/app/5527800/view/1848664643360661",
+      "highlights": [
+        "Free demo on Steam covering the start of the contract."
+      ],
+      "related": [
+        [
+          "/beginner-guide/",
+          "Beginner guide"
+        ]
+      ]
+    }
+  ]
+}

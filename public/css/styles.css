@@ -1212,6 +1212,107 @@ td:first-child {
   color: var(--ink-soft);
 }
 
+/* ───────── Patch notes: a dated log ───────── */
+.patch-list {
+  border-left: 2px solid var(--ink);
+  margin-left: 0.4rem;
+}
+
+.patch-entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 0 0 2.25rem 1.6rem;
+  scroll-margin-top: 80px;
+}
+
+.patch-entry::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 0.35rem;
+  width: 12px;
+  height: 12px;
+  background: var(--suit);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+}
+
+.patch-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.patch-body h2 {
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+}
+
+.patch-related,
+.patch-source {
+  margin: 0.6rem 0 0;
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+}
+
+.ach-item {
+  scroll-margin-top: 80px;
+}
+
+.ach-item:target {
+  border-color: var(--suit);
+  box-shadow: 0 0 0 3px var(--suit-wash);
+}
+
+/* ───────── Where to next ───────── */
+.next-steps {
+  background: var(--sheet-alt);
+}
+
+.next-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.next-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.15rem;
+  background: var(--sheet);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 0 3px 0 var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.next-card strong {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.next-card span {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.next-card:hover {
+  background: #fff;
+  color: var(--ink);
+}
+
+.next-card:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
 /* ───────── Misc ───────── */
 .path-box {
   display: flex;
@@ -1410,7 +1511,9 @@ td:first-child {
     grid-template-columns: 1fr;
   }
 
-  .terminal-row {
+  .terminal-row,
+  .patch-entry,
+  .next-grid {
     grid-template-columns: 1fr;
     gap: 0.45rem;
   }

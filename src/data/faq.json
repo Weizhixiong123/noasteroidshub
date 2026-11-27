@@ -17,7 +17,7 @@
   },
   {
     "question": "How does 8-player online co-op work with shared money and saves?",
-    "answer": "Campaign progress is saved on the host's PC across up to 5 save slots. Mined ore credits go into a shared crew wallet controlled by the host's permission settings, while hosts can toggle whether equipment loadouts are shared or personal. Use the T key for text chat and watch teammate outlines visible through rock."
+    "answer": "The host's PC keeps the campaign (up to 5 save slots). Crew money is always shared; the host chooses whether gear is shared or personal—with personal gear, the Laser, Plasma Cutter and Missile Swarm cost the solo price. Ore pays 90% of its normal value after multiplayer shifts. Press T for text chat; teammates' names and outlines show through rock (middle mouse by default)."
   },
   {
     "question": "Where is the No Asteroids save file located?",

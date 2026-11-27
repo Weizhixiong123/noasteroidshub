@@ -4,8 +4,136 @@ import {
   STEAM_URL,
   STEAM_COMMUNITY_URL,
   LAST_UPDATED,
-  NAV_ITEMS
+  NAV_ITEMS,
+  ANALYTICS
 } from "../config.mjs";
+
+/* ───────── Internal linking ─────────
+   The first mention of each term on a page becomes a link to the page that
+   answers it. Headings, buttons, labels, captions and existing links are left alone. */
+const ACH = (id) => `/achievements-endings/#ach-${id}`;
+const LINK_TERMS = [
+  ["Lance vs Slicer", "/upgrades-weapons/#lance-vs-slicer"],
+  ["Strange Matter", "/strange-matter/"],
+  ["strange matter", "/strange-matter/"],
+  ["Repair Station", "/repair-station/"],
+  ["Orbital Strike", "/upgrades-weapons/#best-ship-guns"],
+  ["Collapsar", "/upgrades-weapons/#best-ship-guns"],
+  ["Missile Swarm", "/upgrades-weapons/"],
+  ["Plasma Cutter", "/upgrades-weapons/"],
+  ["Tractor Beam", "/upgrades-weapons/"],
+  ["Antimatter", "/ores-economy/"],
+  ["Neutronium", "/ores-economy/"],
+  ["Dark Matter", "/ores-economy/"],
+  ["Star Gold", "/ores-economy/"],
+  ["core metal", "/ores-economy/"],
+  ["pace calculator", "/calculator/"],
+  ["patch notes", "/patch-notes/"],
+  ["New Game+", "/patch-notes/"],
+  ["Full toolbox", ACH("full-toolbox")],
+  ["Armed to the teeth", ACH("armed-to-the-teeth")],
+  ["Earth saved", ACH("earth-saved")],
+  ["Wide awake", ACH("wide-awake")],
+  ["Second wind", ACH("second-wind")],
+  ["Complaints accepted", ACH("complaints-accepted")],
+  ["Straight to the heart", ACH("straight-to-the-heart")],
+  ["Demolition expert", ACH("demolition-expert")],
+  ["Fresh off the line", ACH("fresh-off-the-line")],
+  ["Mineralogist", ACH("mineralogist")],
+  ["Gun on the roof", ACH("gun-on-the-roof")],
+  ["Rocketeer", ACH("rocketeer")]
+];
+const SKIP_TAGS = new Set(["a", "h1", "h2", "h3", "button", "script", "style", "figcaption", "th", "label", "title", "textarea", "option", "code", "svg", "time"]);
+const MAX_AUTO_LINKS = 14;
+const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const TERM_RES = LINK_TERMS.map(([term, href]) => ({ href, re: new RegExp(`(?<![\\w+-])${escapeRe(term)}(?![\\w+-])`) }));
+
+export function autoLink(html, currentPath) {
+  const usedHrefs = new Set();
+  const isSelf = (href) => href.split("#")[0] === currentPath;
+  let count = 0;
+  const skip = {};
+  let skipDepth = 0;
+  return html
+    .split(/(<[^>]+>)/)
+    .map((tok) => {
+      if (tok.startsWith("<")) {
+        const m = tok.match(/^<(\/?)([a-zA-Z0-9]+)/);
+        if (m && SKIP_TAGS.has(m[2].toLowerCase()) && !tok.endsWith("/>")) {
+          const tag = m[2].toLowerCase();
+          if (m[1]) {
+            if (skip[tag] > 0) { skip[tag] -= 1; skipDepth -= 1; }
+          } else {
+            skip[tag] = (skip[tag] || 0) + 1; skipDepth += 1;
+          }
+        }
+        return tok;
+      }
+      if (skipDepth > 0 || count >= MAX_AUTO_LINKS || !tok.trim()) return tok;
+      let segments = [{ text: tok, linked: false }];
+      for (const { href, re } of TERM_RES) {
+        if (count >= MAX_AUTO_LINKS) break;
+        if (usedHrefs.has(href) || isSelf(href)) continue;
+        const next = [];
+        let done = false;
+        for (const seg of segments) {
+          if (done || seg.linked) { next.push(seg); continue; }
+          const m = seg.text.match(re);
+          if (!m) { next.push(seg); continue; }
+          next.push({ text: seg.text.slice(0, m.index), linked: false });
+          next.push({ text: `<a href="${href}">${m[0]}</a>`, linked: true });
+          next.push({ text: seg.text.slice(m.index + m[0].length), linked: false });
+          done = true;
+        }
+        if (done) { usedHrefs.add(href); count += 1; }
+        segments = next;
+      }
+      return segments.map((s) => s.text).join("");
+    })
+    .join("");
+}
+
+/* ───────── "Where to next" per page ───────── */
+const NEXT_STEPS = {
+  "/beginner-guide/": [["/calculator/", "90-day pace calculator", "Check whether your pace will finish by Day 90."], ["/upgrades-weapons/", "Tools and ship guns", "What to buy after the Sledgehammer and Drill."], ["/ores-economy/", "Ore prices", "Which ores are worth the trip back."]],
+  "/upgrades-weapons/": [["/strange-matter/", "Strange Matter", "What the Lance, Slicer and big guns are for."], ["/repair-station/", "Repair Station", "Permanent gun bonuses from cleaning the ship."], ["/calculator/", "Pace calculator", "See if your guns are keeping up."]],
+  "/ores-economy/": [["/strange-matter/", "Strange Matter", "The new heart at the center of the asteroid."], ["/upgrades-weapons/", "Tools and guns", "Which tool breaks which layer."], ["/calculator/", "Pace calculator", "Turn your daily haul into a finish date."]],
+  "/achievements-endings/": [["/repair-station/", "Repair Station", "Cleaning, repairs and Fresh off the line."], ["/strange-matter/", "Strange Matter", "Reaching the center for Straight to the heart."], ["/patch-notes/", "Patch notes", "Achievement fixes in recent updates."]],
+  "/calculator/": [["/upgrades-weapons/#best-ship-guns", "Best ship guns", "The fastest way to raise your daily volume."], ["/ores-economy/", "Ore prices", "Fund upgrades faster."], ["/beginner-guide/", "Beginner guide", "Day 1–90 phases at a glance."]],
+  "/faq-coop/": [["/beginner-guide/", "Beginner guide", "Your first shifts, step by step."], ["/upgrades-weapons/", "Tools and guns", "Co-op prices and buy order."], ["/patch-notes/", "Patch notes", "Recent co-op fixes."]],
+  "/repair-station/": [["/achievements-endings/", "All 65 achievements", "With unlock rates and tips."], ["/upgrades-weapons/", "Tools and guns", "Spend the bonuses well."], ["/patch-notes/", "Patch notes", "Cleaning and repair changes."]],
+  "/strange-matter/": [["/upgrades-weapons/#lance-vs-slicer", "Lance vs Slicer", "Which $1.2M tool to buy first."], ["/ores-economy/", "All ores", "Prices for everything else you dig up."], ["/patch-notes/", "Patch notes", "When Strange Matter arrived and what changed since."]],
+  "/patch-notes/": [["/upgrades-weapons/", "Tools and guns", "Current prices and stats."], ["/strange-matter/", "Strange Matter", "The biggest addition since launch."], ["/faq-coop/", "Co-op FAQ", "How shared money and gear work."]]
+};
+
+function renderNextSteps(currentPath) {
+  const steps = NEXT_STEPS[currentPath];
+  if (!steps) return "";
+  return `
+    <section class="section next-steps" aria-labelledby="next-steps-title">
+      <div class="container">
+        <h2 id="next-steps-title">Where to next</h2>
+        <div class="next-grid">
+          ${steps
+            .map(
+              ([href, label, desc]) => `<a class="next-card" href="${escapeHtml(href)}"><strong>${escapeHtml(label)}</strong><span>${escapeHtml(desc)}</span></a>`
+            )
+            .join("\n          ")}
+        </div>
+      </div>
+    </section>`;
+}
+
+function renderAnalytics() {
+  const parts = [];
+  if (ANALYTICS.cloudflareToken) {
+    parts.push(`<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='${JSON.stringify({ token: ANALYTICS.cloudflareToken })}'></script>`);
+  }
+  if (ANALYTICS.plausibleDomain) {
+    parts.push(`<script defer data-domain="${escapeHtml(ANALYTICS.plausibleDomain)}" src="https://plausible.io/js/script.js"></script>`);
+  }
+  return parts.join("\n  ");
+}
 
 export function escapeHtml(str) {
   return String(str)
@@ -108,6 +236,7 @@ export function renderLayout({
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@700;800&family=Big+Shoulders+Stencil:wght@900&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   ${schemaHtml}
+  ${renderAnalytics()}
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -130,7 +259,8 @@ export function renderLayout({
   </header>
 
   <main id="main-content">
-    ${content}
+    ${autoLink(content, currentPath)}
+    ${renderNextSteps(currentPath)}
   </main>
 
   <footer class="site-footer">
@@ -157,6 +287,7 @@ export function renderLayout({
             <li><a href="/achievements-endings/">65 achievements and museum</a></li>
             <li><a href="/calculator/">90-day pace calculator</a></li>
             <li><a href="/faq-coop/">Co-op, saves, and system FAQ</a></li>
+            <li><a href="/patch-notes/">Patch notes and updates</a></li>
             <li><a href="${escapeHtml(STEAM_COMMUNITY_URL)}" target="_blank" rel="noopener noreferrer">Steam community hub</a></li>
           </ul>
         </div>

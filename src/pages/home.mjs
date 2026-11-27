@@ -257,6 +257,11 @@ export function renderHomePage(gameData) {
             <p>8-player host wallet rules, Windows and Steam Deck save folders, Apple Silicon vs. Intel Mac limits, and how it compares to Drink the Ocean.</p>
             <a class="btn btn-secondary btn-sm" href="/faq-coop/">Open FAQ</a>
           </div>
+          <div class="terminal-row">
+            <h3>Patch notes and updates</h3>
+            <p>Every update from the demo to the latest patch, summed up with what it changes for tools, ore prices and co-op.</p>
+            <a class="btn btn-secondary btn-sm" href="/patch-notes/">Read patch notes</a>
+          </div>
         </div>
       </div>
     </section>
