@@ -57,10 +57,10 @@
     };
 
     const getLayerInfo = (pctCleared) => {
-      if (pctCleared >= 85) return { name: "Asteroid Core (Antimatter & Dark Matter)", color: "#ef4444" };
-      if (pctCleared >= 55) return { name: "Deep Mantle (Plasmite & Neutronium)", color: "#c084fc" };
-      if (pctCleared >= 25) return { name: "Mid Crust (Star Gold & Titanium)", color: "#f0c446" };
-      return { name: "Outer Crust (Space Ice & Meteoric Iron)", color: "#7dd3fc" };
+      if (pctCleared >= 85) return { name: "Core metal (Missile Swarm)", color: "#ff7a2e" };
+      if (pctCleared >= 55) return { name: "Basalt (Laser)", color: "#c9a7ff" };
+      if (pctCleared >= 25) return { name: "Deep stone (Drill)", color: "#f2d27a" };
+      return { name: "Regolith and stone (Pickaxe)", color: "#9fd4ff" };
     };
 
     const updateReadouts = () => {
@@ -101,7 +101,7 @@
       ctx.clearRect(0, 0, w, h);
 
       // Void backdrop
-      ctx.fillStyle = "#0b0c0f";
+      ctx.fillStyle = "#050a18";
       ctx.fillRect(0, 0, w, h);
 
       // Faint stars
@@ -114,7 +114,7 @@
       const earthGrad = ctx.createRadialGradient(w * 0.5, h * 1.48, h * 0.35, w * 0.5, h * 1.48, h * 0.65);
       earthGrad.addColorStop(0, "rgba(59, 130, 246, 0.25)");
       earthGrad.addColorStop(0.75, "rgba(30, 64, 175, 0.14)");
-      earthGrad.addColorStop(1, "rgba(11, 12, 15, 0)");
+      earthGrad.addColorStop(1, "rgba(5, 10, 24, 0)");
       ctx.fillStyle = earthGrad;
       ctx.beginPath();
       ctx.arc(w * 0.5, h * 1.48, h * 0.65, Math.PI, Math.PI * 2);
@@ -147,12 +147,12 @@
       ctx.save();
       ctx.translate(sx, sy);
       ctx.fillStyle = "#262b35";
-      ctx.strokeStyle = "#e8b325";
+      ctx.strokeStyle = "#ee6417";
       ctx.lineWidth = 1.5;
       ctx.fillRect(-24, -8, 48, 15);
       ctx.strokeRect(-24, -8, 48, 15);
       // Turret mount underneath
-      ctx.fillStyle = "#e8b325";
+      ctx.fillStyle = "#ee6417";
       ctx.fillRect(-6, 7, 12, 5);
       // Thruster glow
       ctx.fillStyle = "#d94832";
@@ -163,7 +163,7 @@
       if (effectiveRem > 0 && (laserActive > 0 || reducedMotion)) {
         const targetX = cx + Math.cos(hitAngle) * (radius * 0.72);
         const targetY = cy + Math.sin(hitAngle) * (radius * 0.72);
-        ctx.strokeStyle = reducedMotion ? "rgba(232, 179, 37, 0.45)" : "rgba(245, 200, 76, 0.85)";
+        ctx.strokeStyle = reducedMotion ? "rgba(238, 100, 23, 0.45)" : "rgba(255, 140, 70, 0.9)";
         ctx.lineWidth = reducedMotion ? 1.5 : 2.5;
         ctx.setLineDash([7, 5]);
         ctx.beginPath();
@@ -172,7 +172,7 @@
         ctx.stroke();
         ctx.setLineDash([]);
 
-        ctx.fillStyle = "#f5c84c";
+        ctx.fillStyle = "#ff9a5c";
         ctx.fillRect(targetX - 3, targetY - 3, 6, 6);
       }
 
@@ -187,9 +187,9 @@
         });
         ctx.closePath();
 
-        ctx.fillStyle = "#1c1f26";
+        ctx.fillStyle = "#5a5249";
         ctx.fill();
-        ctx.strokeStyle = "#4d5361";
+        ctx.strokeStyle = "#9a8f82";
         ctx.lineWidth = 2;
         ctx.stroke();
 
@@ -201,7 +201,7 @@
           ctx.lineTo(cx + Math.cos(v.a) * radius * v.r, cy + Math.sin(v.a) * radius * v.r);
         }
         ctx.closePath();
-        ctx.fillStyle = "rgba(11, 12, 15, 0.46)";
+        ctx.fillStyle = "rgba(5, 10, 24, 0.5)";
         ctx.fill();
 
         // Mineral veins revealed by depth
@@ -260,7 +260,7 @@
           if (effectiveRem > 0) {
             const tx = cx + Math.cos(hitAngle) * (radius * 0.72);
             const ty = cy + Math.sin(hitAngle) * (radius * 0.72);
-            spawnChips(tx, ty, "#e8b325", 5);
+            spawnChips(tx, ty, "#ee6417", 5);
           }
         }
         if (laserActive > 0) laserActive -= 1;

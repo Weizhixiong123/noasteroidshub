@@ -87,7 +87,7 @@
         } else if (day <= 15) {
           outStatus.classList.add("yellow");
           outStatus.innerHTML =
-            "<strong>Early shift window (Days 1–15):</strong> Prioritize HUD scanner vein hunting, Oxygen and Cargo upgrades, and your first roof gun before judging pace.";
+            "<strong>Early shift window (Days 1–15):</strong> Buy the Sledgehammer and Drill, then a first ship gun and the Tractor Beam once guns go on sale on Day 15, before judging pace.";
         } else if (reqDaily > 180000 && pct < 50) {
           outStatus.classList.add("impact");
           outStatus.innerHTML =
@@ -142,7 +142,7 @@
       if (outAdvice) {
         if (types === 1) {
           outAdvice.textContent =
-            "High market decay risk: selling 100% of a single mineral drops terminal payout. Filter your scanner for 2 to 4 ore veins per shift.";
+            "High market decay risk: selling 100% of a single mineral drops terminal payout. Spread sales across 2 to 4 ore types per shift.";
         } else if (types >= 3) {
           outAdvice.textContent =
             "Balanced rotation: splitting cargo across " +

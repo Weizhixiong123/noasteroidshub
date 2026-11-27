@@ -76,7 +76,7 @@ export function renderCalculatorPage() {
                   <canvas aria-label="Live asteroid size preview synced with remaining cubic meters"></canvas>
                 </div>
                 <div class="viewport-footer">
-                  <span data-scene-layer>Outer Crust</span>
+                  <span data-scene-layer>Regolith and stone (Pickaxe)</span>
                 </div>
               </div>
 

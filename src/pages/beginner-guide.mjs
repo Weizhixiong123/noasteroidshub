@@ -62,8 +62,8 @@ export function renderBeginnerGuidePage(gameData) {
             <p>Check the selling terminal's Order of the Day, buy unlocked gear or hull turrets, and grab coffee at the ship station for the <em>Coffee break</em> achievement.</p>
           </div>
           <div class="panel">
-            <h3>2. Drop and scan veins</h3>
-            <p>Ride the lander down, open your HUD mineral scanner, and filter color-coded ore veins instead of wasting oxygen digging empty rock.</p>
+            <h3>2. Drop and dig the surface</h3>
+            <p>Ride the lander down and work the surface first: every ore up to Plasmite breaks with any tool, so sell early and put the first $500 into the Sledgehammer.</p>
           </div>
           <div class="panel">
             <h3>3. Extract before oxygen runs out</h3>
@@ -122,7 +122,7 @@ export function renderBeginnerGuidePage(gameData) {
               <tr>
                 <td><strong>Phase 1: Demo and foundation</strong></td>
                 <td>Days 1–15</td>
-                <td>Learn scanner filtering, avoid blackouts, harvest Space Ice and Meteoric Iron</td>
+                <td>Learn the oxygen round trip, avoid blackouts, harvest Space Ice and Meteoric Iron</td>
                 <td>Sledgehammer then Drill, Oxygen and Cargo tanks, first Ship Turret, Jetpack</td>
               </tr>
               <tr>

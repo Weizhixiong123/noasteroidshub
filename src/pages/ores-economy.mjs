@@ -79,24 +79,24 @@ export function renderOresEconomyPage(gameData) {
         <div class="grid grid-2" style="align-items: center;">
           <div class="diagram-card">
             <svg viewBox="0 0 520 340" role="img" aria-label="No Asteroids cross-section showing regolith and stone, deep stone, basalt, core metal and the strange matter heart">
-              <rect width="520" height="340" fill="#0B0C0F"/>
+              <rect width="520" height="340" fill="#050A18"/>
               <circle cx="260" cy="170" r="145" fill="#1C1F26" stroke="#7DD3FC" stroke-opacity="0.55" stroke-width="2"/>
               <circle cx="260" cy="170" r="108" fill="#181B22" stroke="#F0C446" stroke-opacity="0.65" stroke-width="2" stroke-dasharray="6 4"/>
               <circle cx="260" cy="170" r="70" fill="#14161B" stroke="#C084FC" stroke-opacity="0.75" stroke-width="2"/>
               <circle cx="260" cy="170" r="32" fill="#2A1215" stroke="#EF4444" stroke-width="2.5"/>
               <circle cx="260" cy="170" r="9" fill="#EF4444"/>
-              <text x="260" y="42" text-anchor="middle" fill="#7DD3FC" font-family="monospace" font-size="12" font-weight="700">REGOLITH / STONE (70–100%): Pickaxe</text>
-              <text x="260" y="79" text-anchor="middle" fill="#F0C446" font-family="monospace" font-size="12" font-weight="700">DEEP STONE (55–70%): Drill</text>
-              <text x="260" y="118" text-anchor="middle" fill="#C084FC" font-family="monospace" font-size="12" font-weight="700">BASALT (40–55%): Laser</text>
-              <text x="260" y="174" text-anchor="middle" fill="#FCA5A5" font-family="monospace" font-size="11" font-weight="700">CORE METAL</text>
-              <text x="260" y="216" text-anchor="middle" fill="#FCA5A5" font-family="monospace" font-size="11" font-weight="700">0–40%: Missile Swarm · center: Strange Matter</text>
-              <text x="260" y="324" text-anchor="middle" fill="#9C988E" font-family="monospace" font-size="11">% = distance from the center as a share of the radius</text>
+              <text x="260" y="42" text-anchor="middle" fill="#7DD3FC" font-family="Public Sans, sans-serif" paint-order="stroke" stroke="#050A18" stroke-width="5" stroke-linejoin="round" font-size="12" font-weight="700">REGOLITH / STONE (70–100%): Pickaxe</text>
+              <text x="260" y="79" text-anchor="middle" fill="#F0C446" font-family="Public Sans, sans-serif" paint-order="stroke" stroke="#050A18" stroke-width="5" stroke-linejoin="round" font-size="12" font-weight="700">DEEP STONE (55–70%): Drill</text>
+              <text x="260" y="118" text-anchor="middle" fill="#C084FC" font-family="Public Sans, sans-serif" paint-order="stroke" stroke="#050A18" stroke-width="5" stroke-linejoin="round" font-size="12" font-weight="700">BASALT (40–55%): Laser</text>
+              <text x="260" y="174" text-anchor="middle" fill="#FCA5A5" font-family="Public Sans, sans-serif" paint-order="stroke" stroke="#050A18" stroke-width="5" stroke-linejoin="round" font-size="11" font-weight="700">CORE METAL</text>
+              <text x="260" y="216" text-anchor="middle" fill="#FCA5A5" font-family="Public Sans, sans-serif" paint-order="stroke" stroke="#050A18" stroke-width="5" stroke-linejoin="round" font-size="11" font-weight="700">0–40%: Missile Swarm · center: Strange Matter</text>
+              <text x="260" y="324" text-anchor="middle" fill="#9C988E" font-family="Public Sans, sans-serif" paint-order="stroke" stroke="#050A18" stroke-width="5" stroke-linejoin="round" font-size="11">% = distance from the center as a share of the radius</text>
             </svg>
           </div>
 
           <div>
             <h3>Rock layers and the tool you need</h3>
-            <div class="table-wrap">
+            <div class="table-wrap table-compact">
               <table>
                 <thead><tr><th>Layer</th><th>Depth</th><th>Breaks with</th></tr></thead>
                 <tbody>${layerRows}</tbody>

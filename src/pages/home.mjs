@@ -77,7 +77,7 @@ export function renderHomePage(gameData) {
           </div>
           <div class="viewport-footer">
             <strong data-scene-volume>4,400,000 m³ remaining</strong>
-            <span data-scene-layer>Outer Crust (Space Ice &amp; Meteoric Iron)</span>
+            <span data-scene-layer>Regolith and stone (Pickaxe)</span>
             <span data-scene-chipped>Test-mined: 0 m³</span>
           </div>
         </div>
@@ -247,8 +247,8 @@ export function renderHomePage(gameData) {
         <h2>Four rules for your first mining shift</h2>
         <div class="grid grid-2">
           <div class="panel">
-            <h3>Scan veins before swinging</h3>
-            <p>Use the HUD mineral scanner to filter out dead stone so every second of oxygen hits paying ore.</p>
+            <h3>Buy the Sledgehammer and Drill first</h3>
+            <p>At $500 and $2,000 they are the cheapest speed-up of the whole run, and the Drill opens the deep-stone layer.</p>
           </div>
           <div class="panel">
             <h3>Reserve oxygen for the flight back</h3>
