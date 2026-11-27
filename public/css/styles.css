@@ -1313,6 +1313,128 @@ td:first-child {
   box-shadow: 0 0 0 var(--ink);
 }
 
+/* ───────── Item pages: spec sheet + body ───────── */
+.item-layout {
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.item-spec {
+  position: sticky;
+  top: 80px;
+}
+
+.spec-sheet {
+  margin: 0;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 5px 5px 0 rgba(23, 36, 64, 0.1);
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.spec-row:last-child {
+  border-bottom: none;
+}
+
+.spec-row dt {
+  font-size: 0.86rem;
+  color: var(--ink-muted);
+}
+
+.spec-row dd {
+  margin: 0;
+  font-weight: 700;
+  text-align: right;
+}
+
+.item-body h2 {
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  margin-top: 2rem;
+}
+
+.item-body h2:first-child {
+  margin-top: 0;
+}
+
+.item-muted {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+}
+
+.rank-bar {
+  display: block;
+  height: 8px;
+  width: var(--w);
+  min-width: 6px;
+  background: var(--suit);
+  border-radius: 999px;
+  margin-top: 0.45rem;
+}
+
+/* ───────── Ad slots: space reserved so nothing jumps when they load ───────── */
+.ad-slot {
+  padding: 1.25rem 0;
+}
+
+.ad-slot--top {
+  border-bottom: 1px dashed var(--rule-strong);
+}
+
+.ad-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: calc(var(--ad-h, 90px) + 1.3rem);
+}
+
+.ad-slot--top .ad-box {
+  --ad-h: 90px;
+}
+
+.ad-slot--mid .ad-box {
+  --ad-h: 250px;
+}
+
+.ad-label {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+.ad-frame {
+  display: block;
+  border: 0;
+  max-width: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.ad-slot--native {
+  border-top: 1px dashed var(--rule-strong);
+}
+
+.ad-slot--native .ad-label {
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 767px) {
+  .ad-slot--top .ad-box {
+    --ad-h: 50px;
+  }
+}
+
 /* ───────── Misc ───────── */
 .path-box {
   display: flex;
@@ -1513,6 +1635,7 @@ td:first-child {
 
   .terminal-row,
   .patch-entry,
+  .item-layout,
   .next-grid {
     grid-template-columns: 1fr;
     gap: 0.45rem;
@@ -1528,6 +1651,14 @@ td:first-child {
 }
 
 @media (max-width: 960px) {
+  .item-spec {
+    position: static;
+  }
+
+  .item-layout {
+    gap: 2rem;
+  }
+
   .shot-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

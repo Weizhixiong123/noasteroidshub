@@ -1,4 +1,5 @@
 import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml, renderShot } from "../templates/layout.mjs";
+import { toolHref, gunHref } from "./items.mjs";
 
 const fmt = (n, digits = 2) => (Number.isInteger(n) ? String(n) : n.toFixed(digits));
 
@@ -56,7 +57,7 @@ export function renderUpgradesWeaponsPage(gameData) {
     .map(
       (t, i) => `
       <tr data-filter-item data-filter-cat="handheld" data-filter-text="${escapeHtml(`${t.name} ${t.breaks} ${t.unlock} ${t.notes}`)}">
-        <td><strong>${i + 1}. ${escapeHtml(t.name)}</strong></td>
+        <td><strong>${i + 1}. <a href="${toolHref(t.name)}">${escapeHtml(t.name)}</a></strong></td>
         <td>${escapeHtml(t.price)}</td>
         <td>${escapeHtml(t.priceCrew2)} / ${escapeHtml(t.priceCrew3)}</td>
         <td>${escapeHtml(t.breaks)}</td>
@@ -69,7 +70,7 @@ export function renderUpgradesWeaponsPage(gameData) {
     .map(
       (g) => `
       <tr data-filter-item data-filter-cat="ship" data-filter-text="${escapeHtml(`${g.name} ${g.notes}`)}">
-        <td><strong>${escapeHtml(g.name)}</strong></td>
+        <td><strong><a href="${gunHref(g.name)}">${escapeHtml(g.name)}</a></strong></td>
         <td>${escapeHtml(g.price)}</td>
         <td>${escapeHtml(fmt(g.damage))}</td>
         <td>${escapeHtml(fmt(g.radius, 1))} m</td>

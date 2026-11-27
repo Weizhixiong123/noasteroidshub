@@ -7,6 +7,7 @@ import {
   NAV_ITEMS,
   ANALYTICS
 } from "../config.mjs";
+import { renderAdSlot, renderNativeAd } from "../ads.mjs";
 
 /* ───────── Internal linking ─────────
    The first mention of each term on a page becomes a link to the page that
@@ -17,15 +18,24 @@ const LINK_TERMS = [
   ["Strange Matter", "/strange-matter/"],
   ["strange matter", "/strange-matter/"],
   ["Repair Station", "/repair-station/"],
-  ["Orbital Strike", "/upgrades-weapons/#best-ship-guns"],
-  ["Collapsar", "/upgrades-weapons/#best-ship-guns"],
-  ["Missile Swarm", "/upgrades-weapons/"],
-  ["Plasma Cutter", "/upgrades-weapons/"],
+  ["Orbital Strike", "/guns/orbital-strike/"],
+  ["Collapsar", "/guns/collapsar/"],
+  ["Autocannon", "/guns/autocannon/"],
+  ["Railgun", "/guns/railgun/"],
+  ["Mass Driver", "/guns/mass-driver/"],
+  ["Seismic Cannon", "/guns/seismic-cannon/"],
+  ["Laser Beam", "/guns/laser-beam/"],
+  ["Missile Swarm", "/tools/missile-swarm/"],
+  ["Plasma Cutter", "/tools/plasma-cutter/"],
+  ["Sledgehammer", "/tools/sledgehammer/"],
   ["Tractor Beam", "/upgrades-weapons/"],
-  ["Antimatter", "/ores-economy/"],
-  ["Neutronium", "/ores-economy/"],
-  ["Dark Matter", "/ores-economy/"],
-  ["Star Gold", "/ores-economy/"],
+  ["Antimatter", "/ores/antimatter/"],
+  ["Neutronium", "/ores/neutronium/"],
+  ["Dark Matter", "/ores/dark-matter/"],
+  ["Star Gold", "/ores/star-gold/"],
+  ["Space Crystal", "/ores/space-crystal/"],
+  ["Plasmite", "/ores/plasmite/"],
+  ["Meteoric Iron", "/ores/meteoric-iron/"],
   ["core metal", "/ores-economy/"],
   ["pace calculator", "/calculator/"],
   ["patch notes", "/patch-notes/"],
@@ -44,7 +54,7 @@ const LINK_TERMS = [
   ["Rocketeer", ACH("rocketeer")]
 ];
 const SKIP_TAGS = new Set(["a", "h1", "h2", "h3", "button", "script", "style", "figcaption", "th", "label", "title", "textarea", "option", "code", "svg", "time"]);
-const MAX_AUTO_LINKS = 14;
+const MAX_AUTO_LINKS = 16;
 const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const TERM_RES = LINK_TERMS.map(([term, href]) => ({ href, re: new RegExp(`(?<![\\w+-])${escapeRe(term)}(?![\\w+-])`) }));
 
@@ -106,8 +116,8 @@ const NEXT_STEPS = {
   "/patch-notes/": [["/upgrades-weapons/", "Tools and guns", "Current prices and stats."], ["/strange-matter/", "Strange Matter", "The biggest addition since launch."], ["/faq-coop/", "Co-op FAQ", "How shared money and gear work."]]
 };
 
-function renderNextSteps(currentPath) {
-  const steps = NEXT_STEPS[currentPath];
+function renderNextSteps(currentPath, override) {
+  const steps = override || NEXT_STEPS[currentPath];
   if (!steps) return "";
   return `
     <section class="section next-steps" aria-labelledby="next-steps-title">
@@ -122,6 +132,15 @@ function renderNextSteps(currentPath) {
         </div>
       </div>
     </section>`;
+}
+
+/* Leaderboard right under the hero / page header (the first section). */
+function withTopAd(html, noindex) {
+  if (noindex) return html;
+  const i = html.indexOf("</section>");
+  if (i === -1) return html;
+  const at = i + "</section>".length;
+  return html.slice(0, at) + renderAdSlot("728x90@768,320x50", "ad-slot--top") + html.slice(at);
 }
 
 function renderAnalytics() {
@@ -194,6 +213,7 @@ export function renderLayout({
   schemas = [],
   scripts = [],
   noindex = false,
+  next = null,
   content
 }) {
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
@@ -259,8 +279,10 @@ export function renderLayout({
   </header>
 
   <main id="main-content">
-    ${autoLink(content, currentPath)}
-    ${renderNextSteps(currentPath)}
+    ${withTopAd(autoLink(content, currentPath), noindex)}
+    ${noindex ? "" : renderAdSlot("300x250", "ad-slot--mid")}
+    ${renderNextSteps(currentPath, next)}
+    ${noindex ? "" : renderNativeAd()}
   </main>
 
   <footer class="site-footer">
@@ -294,7 +316,7 @@ export function renderLayout({
       </div>
       <div class="footer-bottom">
         <span>Last updated ${escapeHtml(LAST_UPDATED)} (Steam App ID 5527800)</span>
-        <span>Zero tracking cookies — checklist progress stays local in your browser</span>
+        <span>Checklist progress stays local in your browser. Ads are served by a third-party network.</span>
       </div>
     </div>
   </footer>

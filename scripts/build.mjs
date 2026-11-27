@@ -12,7 +12,9 @@ import { renderFaqCoopPage } from "../src/pages/faq-coop.mjs";
 import { renderRepairStationPage } from "../src/pages/repair-station.mjs";
 import { renderStrangeMatterPage } from "../src/pages/strange-matter.mjs";
 import { renderPatchNotesPage } from "../src/pages/patch-notes.mjs";
+import { itemRoutes } from "../src/pages/items.mjs";
 import { renderNotFoundPage } from "../src/pages/not-found.mjs";
+import { ADS_ENABLED, adFrameDocuments } from "../src/ads.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -103,7 +105,14 @@ async function build() {
       priority: "0.8",
       changefreq: "daily",
       html: renderPatchNotesPage(patchData)
-    }
+    },
+    ...itemRoutes(gameData, achievementsData, patchData).map((item) => ({
+      route: item.route,
+      file: `${item.route.replace(/^\/|\/$/g, "")}/index.html`,
+      priority: "0.7",
+      changefreq: "weekly",
+      html: item.html
+    }))
   ];
 
   for (const page of routes) {
@@ -113,6 +122,14 @@ async function build() {
   }
 
   await writeFile(path.join(DIST_DIR, "404.html"), renderNotFoundPage(), "utf8");
+
+  if (ADS_ENABLED) {
+    for (const doc of adFrameDocuments()) {
+      const outPath = path.join(DIST_DIR, doc.file);
+      await mkdir(path.dirname(outPath), { recursive: true });
+      await writeFile(outPath, doc.html, "utf8");
+    }
+  }
 
   const sitemapUrls = routes
     .map(
@@ -134,6 +151,7 @@ ${sitemapUrls}
 
   const robotsTxt = `User-agent: *
 Allow: /
+Disallow: /ads/
 
 Sitemap: ${SITE_URL}/sitemap.xml
 `;

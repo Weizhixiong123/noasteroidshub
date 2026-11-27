@@ -29,6 +29,11 @@ const EXPECTED_FILES = [
   "js/filters.js"
 ];
 
+import { itemPaths } from "../src/pages/items.mjs";
+
+const gameData = JSON.parse(await readFile(path.resolve(__dirname, "..", "src", "data", "game-data.json"), "utf8"));
+for (const p of itemPaths(gameData)) EXPECTED_FILES.push(`${p.replace(/^\/|\/$/g, "")}/index.html`);
+
 const HTML_FILES = EXPECTED_FILES.filter((f) => f.endsWith(".html"));
 const EXPECTED_SITEMAP_URLS = HTML_FILES.length - 1; // every page except 404.html
 

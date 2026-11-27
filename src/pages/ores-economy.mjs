@@ -1,4 +1,5 @@
 import { renderLayout, renderBreadcrumbs, breadcrumbSchema, escapeHtml, renderShot } from "../templates/layout.mjs";
+import { oreHref } from "./items.mjs";
 
 const ORE_SWATCHES = {
   "Space Ice": "#7dd3fc",
@@ -31,7 +32,7 @@ export function renderOresEconomyPage(gameData) {
     .map((o) => {
       const cat = o.breaks === "Any tool" ? "easy" : "deep";
       const swatchColor = ORE_SWATCHES[o.name] || "#e8b325";
-      const nameHtml = o.href ? `<a href="${escapeHtml(o.href)}">${escapeHtml(o.name)}</a>` : escapeHtml(o.name);
+      const nameHtml = `<a href="${escapeHtml(oreHref(o))}">${escapeHtml(o.name)}</a>`;
       return `
       <tr data-filter-item data-filter-cat="${cat}" data-filter-text="${escapeHtml(`${o.name} ${o.breaks} ${o.notes}`)}">
         <td>
